@@ -1,0 +1,3 @@
+-ffast-math
+-freciprocal-math
+-funsafe-math-optimizations
