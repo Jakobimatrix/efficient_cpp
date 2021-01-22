@@ -38,10 +38,13 @@ Contributions are welcome!
 - [Algorithms](algorithms/algorithms.md)
 - [Bit Magic](bitMagic/bitMagic.md)
 - [Compiler](compiler/compiler.md)
+- [constexpr; functions@compiletime](constexpr/constexpr.md)
 - [Intrinsic Functions](intrinsicFunctions/intrinsicFunctions.md)
-- [Math](math/math.md)
 - [Multithreading](multithreading/multithreading.md)
 - [Microcontroller](microcontroller/microcontroller.md)
 - [Profiling](profiling/profiling.md)
 - [std](std/std.md)
 - [Tools](/tols/tools.md)
+
+## Credits
+If I shamelessly copy pasted from another tutorial (more than a few lines) I credited the author direct there.
