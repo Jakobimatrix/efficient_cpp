@@ -1,7 +1,7 @@
 [root](../README.md) / [Basics](basics.md) / std.md
 # std
 ## #include &lt;algorithm&gt;
-Ever found yourself writeing the 1000st. for loop over an array/vector/list/map performing a very simple operation?
+Ever found yourself writing the 1000st. for loop over an array/vector/list/map performing a very simple operation?
 **It is very likely that there already is a suitable algorithm in the [algorithm header](https://en.cppreference.com/w/cpp/algorithm)!**
 
 ## emplace_back
@@ -16,15 +16,15 @@ v.emplace_back(YourClass(...)); // NO!!!
 - [video tutorial](https://www.youtube-nocookie.com/embed/uwv1uvi1OTU?rel=0) *~5 min.*
 
 ## std::endl
-The endline operation will flush the stream to the console/file. In most cases this is not neccessary especially in loops and costs much time.
+The endline operation will flush the stream to the console/file. In most cases this is not necessary especially in loops and costs much time.
 **Do not use std::endl. Use ... << "\n" instead. Use std::flush at the end once if necessary.**
 
 - [video tutorial](https://www.youtube-nocookie.com/embed/GMqQOEZYVJQ?rel=0&start=0&end=619) *~10 min.*
 
 ##std::map at() vs []
-[] always tries to insert somthing.
+[] always tries to insert something.
 **Use the at() function. It has a const implementation, is slightly faster and generates less code (assembly).**
-Dont confuse this with the [] operator of a std::vector! In that case [] is faster.
+Don't confuse this with the [] operator of a std::vector! In that case [] is faster.
 - [video tutorial](https://www.youtube-nocookie.com/embed/kDqS1xVWGMg?rel=0)  *~12 min.*
 
 ##std::map as dictionary lookup
@@ -72,12 +72,12 @@ int lookup_value(const std::string_view sv) {
   return map.at(sv);
 }
 ```
-- [The video explaning the code in depth](https://www.youtube-nocookie.com/embed/INn3xa4pMfg?rel=0) *~25 min.*
+- [The video explaining the code in depth](https://www.youtube-nocookie.com/embed/INn3xa4pMfg?rel=0) *~25 min.*
 - [This example in Compiler Explorer](https://godbolt.org/z/cnrzKr)
 
 ## std::regex
 This is the standard library implementation for Regular Expressions. It is not up to date with the newest cpp features, slow to compile and produces vast executables.
-**Dont use it, use [CTRE](https://github.com/hanickadot/compile-time-regular-expressions) instead.**
+**Don't use it, use [CTRE](https://github.com/hanickadot/compile-time-regular-expressions) instead.**
 
 - [video tutorial](https://www.youtube-nocookie.com/embed/8aRfJp1oZGA?rel=0) *~9 min.*
 ## std::string
@@ -87,8 +87,8 @@ The length of a short string depends on the compiler version! Check out the maxi
 ```c_cpp
 std::cout << "Capacity: " << string().capacity(); << "\n";
 ```
-**Use std::string_view instread.**
-**Or use const char* IF you dont do any string operations further down the line.**
+**Use std::string_view instead.**
+**Or use const char* IF you don't do any string operations further down the line.**
 
 - [video how to return a string optimal](https://www.youtube-nocookie.com/embed/9mWWNYRHAIQ?rel=0) *~13 min.*
 - [video short string](https://www.youtube-nocookie.com/embed/S7oVXMzTo4w?rel=0&start=224&end=745) *~10 min.*

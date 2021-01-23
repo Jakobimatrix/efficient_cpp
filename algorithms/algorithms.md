@@ -6,7 +6,7 @@ Choose the right algorithm for your problem. This is linked to choosing the righ
 ## Chapter
 - [control](control.md)
 - [graphics](graphics.md)
-- [optimization](optimization.md)
+- [optimisation](optimisation.md)
 - [sort](sort.md)
 - [search](search.md)
 - [system analysis](systemAnalysis.md)
@@ -20,7 +20,7 @@ name                                             | O(time) | O(space)
 todo                                                |               |              | 
 **graphics**                               |               |              | 
 todo                                               |               |              | 
-**optimization**                        |               |              | 
+**optimisation**                        |               |              | 
 todo                                                  |               |              | 
 **sort**                                        |               |              | 
 todo                                                 |               |              | 

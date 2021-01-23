@@ -1,6 +1,6 @@
 [root](../README.md) / constexpr.md
 # constexpr; functions@compiletime
-Things you can calculate at compiletime. This will probably become just a forest of code snippets. Anyways consider: Everything done at compiletime is const at runtime and can be optimized by your favourit compiler. Btw.: Templates are turing complete, so there is more possible than you think. *It's gonna get a little weared, its gonne get a little wild, this is not from around here, this is from another dimension.*
+Things you can calculate at compile time. This will probably become just a forest of code snippets. Anyways consider: Everything done at compile time is const at run time and can be optimised by your favourite compiler. BTW.: Templates are Turing complete, so there is more possible than you think. *It's gonna get a little weird, its gonna get a little wild, this is not from around here, this is from another dimension.*
 
 
 ## Dictionary Lookup
@@ -46,7 +46,7 @@ int lookup_value(const std::string_view sv) {
   return map.at(sv);
 }
 ```
-- [The video explaning the code in depth](https://www.youtube-nocookie.com/embed/INn3xa4pMfg?rel=0) *~25 min.*
+- [The video explaining the code in depth](https://www.youtube-nocookie.com/embed/INn3xa4pMfg?rel=0) *~25 min.*
 - [This example in Compiler Explorer](https://godbolt.org/z/cnrzKr)
 
 

@@ -1,11 +1,11 @@
 [root](../README.md) / Tools.md
 # Tools
 ## Introduction
-Optimization from hand is very painfull and inefficient. Especially if you did not write the code. Use tools to 
+Optimisation from hand is very pain full and inefficient. Especially if you did not write the code. Use tools to 
 
-- see where optimization is really needed
-- see what kind of optimization is needed
-- find possible optimizations automatically
+- see where optimisation is really needed
+- see what kind of optimisation is needed
+- find possible optimisations automatically
 
 
 ## Clang Tidy
@@ -13,7 +13,7 @@ Optimization from hand is very painfull and inefficient. Especially if you did n
 ## CPP Check
 cppcheck http://cppcheck.sourceforge.net/
 
-## Fast dirty incode hacks
+## Fast dirty in-code hacks
 Sometimes it is just faster to have some small debug functions storing and printing metrics like memory usage or time instead of installing and using third party software. 
 ### Track heap allocations
 ```c_cpp
@@ -37,7 +37,7 @@ void operator delete(void *memory, size_t size){
     free(memory);
 }
 ```
-- [The video explaning the code](https://www.youtube-nocookie.com/embed/sLlGEUO_EGE?rel=0&start=230&end=782) *~9 min.*
+- [The video explaining the code](https://www.youtube-nocookie.com/embed/sLlGEUO_EGE?rel=0&start=230&end=782) *~9 min.*
 
 ## Valgind
-- [adress sanitizer, memory sanitizer, visualize which functions do the most work](https://www.youtube-nocookie.com/embed/3l0BQs2ThTo?rel=0) *~8 min.*
+- [address sanitizer, memory sanitizer, visualise which functions do the most work](https://www.youtube-nocookie.com/embed/3l0BQs2ThTo?rel=0) *~8 min.*
