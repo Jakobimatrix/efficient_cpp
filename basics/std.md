@@ -75,6 +75,24 @@ int lookup_value(const std::string_view sv) {
 - [The video explaining the code in depth](https://www.youtube-nocookie.com/embed/INn3xa4pMfg?rel=0) *~25 min.*
 - [This example in Compiler Explorer](https://godbolt.org/z/cnrzKr)
 
+##std::move
+std::move can help to avoid deep copies of **temporary** objects:
+
+- [Q: what is stdmove and when should it be used](https://stackoverflow.com/questions/3413470/what-is-stdmove-and-when-should-it-be-used#answer-42340735) *~3 min.*
+- [understand rvalue, lvalue and movesemantics, with example](https://stackoverflow.com/questions/3106110/what-is-move-semantics#answer-3109981) *~7 min.*
+
+To be able to use std::move with your own classes, you need to implement the move operator. 
+**This is only necessary if your class holds (large) chunks of data on the heap.**
+In that case you should uderstand the **rule of five**
+
+- [rule of three/five/zero](https://en.cppreference.com/w/cpp/language/rule_of_three) *~8 min.*
+- [construction/assignment/destruction Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#cctor-constructors-assignments-and-destructors) *~2 h.*
+
+However if used wrong it might hinder the compiler to optimize your code or implies a wrong picture of the situation. Let the compiler help you by enabling **-Wredundant-move** and **-Wpessimizing-move**
+
+- [Article: When not to use std::move](https://developers.redhat.com/blog/2019/04/12/understanding-when-not-to-stdmove-in-c/)  *~6 min.*
+- [Video: You Cannot Move From Const](https://www.youtube-nocookie.com/embed/ZKaoR3dP9uM?rel=0) *~6 min.*
+
 ## std::regex
 This is the standard library implementation for Regular Expressions. It is not up to date with the newest cpp features, slow to compile and produces vast executables.
 **Don't use it, use [CTRE](https://github.com/hanickadot/compile-time-regular-expressions) instead.**
