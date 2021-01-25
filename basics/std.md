@@ -17,7 +17,7 @@ Don't confuse this with the [] operator of a std::vector! In that case [] is fas
 - [video tutorial](https://www.youtube-nocookie.com/embed/kDqS1xVWGMg?rel=0)  *~12 min.*
 
 ##std::list
-**Dont use a list!**
+**Don't use a list!**
 // TODO
 
 ##std::map as dictionary lookup
@@ -76,13 +76,13 @@ std::move can help to avoid deep copies of **temporary** objects:
 
 To be able to use `std::move` with your own classes, you need to implement the move operator. 
 **This is only necessary if your class holds (large) chunks of data on the heap.**
-In that case you should uderstand the **rule of five**
+In that case you should understand the **rule of five**
 
 - [rule of three/five/zero](https://en.cppreference.com/w/cpp/language/rule_of_three) *~8 min.*
 - [RAII and the Rule of zero/three/five](https://www.youtube-nocookie.com/embed/7Qgd9B1KuMQ?rel=0&start=1263&end=2960) *~29 min.*
 - [construction/assignment/destruction Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#cctor-constructors-assignments-and-destructors) *~2 h.*
 
-However if used wrong it might hinder the compiler to optimize your code or implies a wrong picture of the situation. Let the compiler help you by enabling **-Wredundant-move** and **-Wpessimizing-move**
+However if used wrong it might hinder the compiler to optimise your code or implies a wrong picture of the situation. Let the compiler help you by enabling **-Wredundant-move** and **-Wpessimizing-move**
 
 - [Article: When not to use std::move](https://developers.redhat.com/blog/2019/04/12/understanding-when-not-to-stdmove-in-c/)  *~6 min.*
 - [Video: You Cannot Move From Const](https://www.youtube-nocookie.com/embed/ZKaoR3dP9uM?rel=0) *~6 min.*
@@ -107,7 +107,7 @@ std::cout << "Capacity: " << string().capacity(); << "\n";
 - [video short string](https://www.youtube-nocookie.com/embed/S7oVXMzTo4w?rel=0&start=224&end=745) *~10 min.*
 
 ## std::vector (dynamic array)
-A vector allowes you to store data on the heap without having to deal with the allocation and without the need to explicit say how much memory you need (in opposite to an array where you need to know the size at compiletime).
+A vector allows you to store data on the heap without having to deal with the allocation and without the need to explicit say how much memory you need (in opposite to an array where you need to know the size at compile time).
 
 The heap allocations of a `std::vector` occur always if the capacity (the number of elements that can be held in currently allocated storage) equals the numbers of elements in the vector and you push_back or emplace_back another element. In that case `std::vector` will allocate memory on the heap of twice the current capacity and move all the data from the current heap to the new allocated space since the data in the vector is always one block in memory.
 
@@ -125,8 +125,8 @@ v.emplace_back(YourClass(...)); // NO!!!
 - [video tutorial](https://www.youtube-nocookie.com/embed/uwv1uvi1OTU?rel=0) *~5 min.*
 
 ### reserve
-`std::vector` allocates memory on the heap if necessarry like so: 2->4->8->16->...
-**Reduce the amount of heap allocations by calculateing how many elements you are going to put in into the vector. If you dont know exactly how many elements to expect, estimate upwards. If you actually know the amount of data at compile time, use an `std::array`.**
+`std::vector` allocates memory on the heap if necessary like so: 2->4->8->16->...
+**Reduce the amount of heap allocations by calculating how many elements you are going to put in into the vector. If you don't know exactly how many elements to expect, estimate upwards. If you actually know the amount of data at compile time, use an `std::array`.**
 
 ###  shrink_to_fit
 If you have large amounts of data and you are not using reserve you might end up in the worst case with 2<sup>n</sup>+1 elements wasting space of 2<sup>n</sup>-1 * `size_of(yourData)`.

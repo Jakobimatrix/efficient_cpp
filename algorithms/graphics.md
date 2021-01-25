@@ -1,4 +1,4 @@
-[root](../README.md) / [Algorithms](algorithms.md) / grapthics.md
+[root](../README.md) / [Algorithms](algorithms.md) / graphics.md
 # Graphics
 
 // TODO

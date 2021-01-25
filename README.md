@@ -47,7 +47,7 @@ Contributions are welcome!
 - [Tools](/tools/tools.md)
 
 ## NFAQ
-**Q:** Did you watch all the linked video footage and read all the linked artikles?
+**Q:** Did you watch all the linked video footage and read all the linked articles?
 **A:** Yes, sometimes at x1.75 speed though.
 
 **Q:** Do you remember all that stuff?

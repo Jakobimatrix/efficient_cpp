@@ -1,4 +1,4 @@
-[root](../README.md) / [Algorithms](algorithms.md) / optimization.md
-# Optimization
+[root](../README.md) / [Algorithms](algorithms.md) / optimisation.md
+# Optimisation
 
 // TODO

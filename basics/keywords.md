@@ -9,7 +9,7 @@ A `const` function does not change any global state.
 This helps the compiler to optimise your code and can be combined with `pure`.
 
 ## const Method
-Flagging a method `const` signals thet a call to this method won't change the object.
+Flagging a method `const` signals that a call to this method won't change the object.
 **Mark all methods `const` which do not change the object; `Getters` for example.**
 
 
@@ -19,8 +19,8 @@ A `const` variable does not change its value but is defined at runtime.
 This helps the compiler to optimise your code.
 
 ## consteval Function
-A call to a function flagged `consteval` must be direct or indirect result in an compiletime known expression. So it can not be called during runtime.
-**Use this instead of `constexpr` if you write a function which should calculate things at compiletime but would be not very efficient for runtime calculation.**
+A call to a function flagged `consteval` must be direct or indirect result in an compile time known expression. So it can not be called during runtime.
+**Use this instead of `constexpr` if you write a function which should calculate things at compile time but would be not very efficient for runtime calculation.**
 
 ## constexpr if
 **If the statement inside the if is known at compile time, use `constexpr if(...)` to let the compiler ignore the other paths entirely.**
@@ -36,12 +36,12 @@ If a function is `constexpr`, it is also `pure` and `const`.
 
 
 ## constexpr Variable
-The value of a `constexpr` variable is known at compiletime and does not change throughout the runtime of the program.
-**Mark all variables `constexpr` which do not change there value through there lifetime and are known at compiletime.**
+The value of a `constexpr` variable is known at compile time and does not change throughout the runtime of the program.
+**Mark all variables `constexpr` which do not change there value through there lifetime and are known at compile time.**
 If a variable is `constexpr`, it is also const.
 
 ## constinit static variable
-A variable declared `constinit static` is assured to be calculated at compiletime. If it is not, the compiler will throw an error.
+A variable declared `constinit static` is assured to be calculated at compile time. If it is not, the compiler will throw an error.
 
 ###const raw Pointer
 Just a friendly reminder:
@@ -53,14 +53,14 @@ const int* const ptr2 = &i; // Can not change value or the pointer.
 ```
 
 ## inline
-By using the word inline you suggest that the function can be inlined: You change an internlal threshold value which the compiler computes whether it thinks that it is good or bad to inline the function. The thing is, that whether this is a good or a bad idea also depends on the architecture.
+By using the word inline you suggest that the function can be inlined: You change an internal threshold value which the compiler computes whether it thinks that it is good or bad to inline the function. The thing is, that whether this is a good or a bad idea also depends on the architecture.
 **TODO different opinions on that topic ;(**
 
 - [How inline Might Affect The Optimizer](https://www.youtube-nocookie.com/embed/GldFtXZkgYo?rel=0) *~8 min.*
 - [cpp core guidelines about inline](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html#f5-if-a-function-is-very-small-and-time-critical-declare-it-inline) *~2 min.*
 
 ## mutable member Variable
-A mutable meber variable is allowed to change in the context of a `const methode`.
+A mutable member variable is allowed to change in the context of a `const method`.
 ```c_cpp
 #include <mutex>
 class C{
@@ -73,13 +73,13 @@ class C{
 };
 ```
 ## [[nodiscard]]
-Declaring a function `[[nodiscard]]` means that you cannot use the function without using its return value. Though this is mainly to prevent and find bugs this also might help you to optimize code after you found that you use empty() instead of clear().
+Declaring a function `[[nodiscard]]` means that you cannot use the function without using its return value. Though this is mainly to prevent and find bugs this also might help you to optimise code after you found that you use empty() instead of clear().
 
 - [Start Using [[nodiscard]]!](https://www.youtube-nocookie.com/embed/nhsahjY5jdE?rel=0) *~6 min.*
 
 ## noexept
-Flagging a function/method with the `noexept` keyword tells the compiler that der will no exeptions happen, when this function/method is called. This allowes the compiler to optimize things.
-**Do mark functions and methods `noexept` if you know that they cannot throw an exeption.**
+Flagging a function/method with the `noexept` keyword tells the compiler that no exceptions will happen will no exceptions happen, when this function/method is called. This allows the compiler to optimise things.
+**Do mark functions and methods `noexept` if you know that they cannot throw an exception.**
 
 - [When noexcept Really Matters](https://www.youtube-nocookie.com/embed/AG_63_edgUg?rel=0) *~5 min.*
 
@@ -91,7 +91,7 @@ This helps the compiler to optimise your code and can be combined with `const`. 
 - [video tutorial](https://www.youtube-nocookie.com/embed/8ZxGABHcu40?rel=0) *~5 min.*
 
 ## static variable
-`Static` variables are essential global variables which get initialized once, exist only once and have a lifetime from there first call untill the programm is terminated. This has its benefits but `static` variables are guaranteed to be initialized in a thread save fashion meaning there are "hidden" locks. Also on every access there is always a check if the variable is already initialized.
+`Static` variables are essential global variables which get initialised once, exist only once and have a lifetime from there first call until the program is terminated. This has its benefits but `static` variables are guaranteed to be initialised in a thread save fashion meaning there are "hidden" locks. Also on every access there is always a check if the variable is already initialised.
 **If a `static variable` is accessed a s&ast;&ast;&ast;t-ton of times it might me a good idea to instead have a local `reference` (local cash) to the `static variable` instead.**
 
 - [example of cashing and analysis against direct access](https://www.youtube-nocookie.com/embed/B3WWsKFePiM?rel=0) *~20 min.*

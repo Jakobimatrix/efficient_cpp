@@ -6,7 +6,7 @@ This is about calling functions and methods as well a passing and returning vari
 **Keep your variables as local as possible. This also helps the compiler to do optimisation.**
 
 - anonymous namespaces // TODO
-- [IF Init statement](https://en.cppreference.com/w/cpp/language/if#If_Statements_with_Initializer) - [video tutorial](https://www.youtube-nocookie.com/embed/AiXU5EuLZgc?rel=0&end=500) *~9 min.*
+- [IF init statement](https://en.cppreference.com/w/cpp/language/if#If_Statements_with_Initializer) - [video tutorial](https://www.youtube-nocookie.com/embed/AiXU5EuLZgc?rel=0&end=500) *~9 min.*
 
 
 ## Passing multiple variables
