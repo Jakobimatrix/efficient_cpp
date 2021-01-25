@@ -10,17 +10,17 @@ The endline operation will flush the stream to the console/file. In most cases t
 
 - [video tutorial](https://www.youtube-nocookie.com/embed/GMqQOEZYVJQ?rel=0&start=0&end=619) *~10 min.*
 
-##std::map at() vs []
+## std::map at() vs []
 [] always tries to insert something.
 **Use the `at()` function. It has a const implementation, is slightly faster and generates less code (assembly).**
 Don't confuse this with the [] operator of a std::vector! In that case [] is faster.
 - [video tutorial](https://www.youtube-nocookie.com/embed/kDqS1xVWGMg?rel=0)  *~12 min.*
 
-##std::list
+## std::list
 **Don't use a list!**
 // TODO
 
-##std::map as dictionary lookup
+## std::map as dictionary lookup
 The implementation of std::map does not allow to be `static constexpr`. Instead use this implementation from Jason Turner:
 ```c_cpp
 #include <array>
@@ -43,7 +43,6 @@ struct Map {
       throw std::range_error("Not Found");
     }
   }
-
 };
 
 using namespace std::literals::string_view_literals;
@@ -68,7 +67,7 @@ int lookup_value(const std::string_view sv) {
 - [The video explaining the code in depth](https://www.youtube-nocookie.com/embed/INn3xa4pMfg?rel=0) *~25 min.*
 - [This example in Compiler Explorer](https://godbolt.org/z/cnrzKr)
 
-##std::move
+## std::move
 std::move can help to avoid deep copies of **temporary** objects:
 
 - [Q: what is stdmove and when should it be used](https://stackoverflow.com/questions/3413470/what-is-stdmove-and-when-should-it-be-used#answer-42340735) *~3 min.*
@@ -100,8 +99,8 @@ The length of a short string depends on the compiler version! Check out the maxi
 ```c_cpp
 std::cout << "Capacity: " << string().capacity(); << "\n";
 ```
-**Use std::string_view instead.**
-**Or use const char* IF you don't do any string operations further down the line.**
+**Use `std::string_view` instead.**
+**Or use `const char&ast; IF` you don't do any string operations further down the line.**
 
 - [video how to return a string optimal](https://www.youtube-nocookie.com/embed/9mWWNYRHAIQ?rel=0) *~13 min.*
 - [video short string](https://www.youtube-nocookie.com/embed/S7oVXMzTo4w?rel=0&start=224&end=745) *~10 min.*
@@ -109,7 +108,7 @@ std::cout << "Capacity: " << string().capacity(); << "\n";
 ## std::vector (dynamic array)
 A vector allows you to store data on the heap without having to deal with the allocation and without the need to explicit say how much memory you need (in opposite to an array where you need to know the size at compile time).
 
-The heap allocations of a `std::vector` occur always if the capacity (the number of elements that can be held in currently allocated storage) equals the numbers of elements in the vector and you push_back or emplace_back another element. In that case `std::vector` will allocate memory on the heap of twice the current capacity and move all the data from the current heap to the new allocated space since the data in the vector is always one block in memory.
+A heap allocations of a `std::vector` occurs always if the capacity (the number of elements that can be held in currently allocated storage) equals the numbers of elements in the vector and you `push_back` or `emplace_back` another element. In that case `std::vector` will allocate memory on the heap of twice the current capacity and move all the data from the current heap to the new allocated space since the data in the vector is always one block in memory.
 
 - [optimise usage of std::vector](https://www.youtube-nocookie.com/embed/HcESuwmlHEY?rel=0&start=67&end=540) *~8 min.*
 
@@ -126,9 +125,9 @@ v.emplace_back(YourClass(...)); // NO!!!
 
 ### reserve
 `std::vector` allocates memory on the heap if necessary like so: 2->4->8->16->...
-**Reduce the amount of heap allocations by calculating how many elements you are going to put in into the vector. If you don't know exactly how many elements to expect, estimate upwards. If you actually know the amount of data at compile time, use an `std::array`.**
+**Reduce the amount of heap allocations by calculating how many elements you are going to put into the vector. If you don't know exactly how many elements to expect, estimate upwards. If you actually know the amount of data at compile time, use an `std::array`.**
 
 ###  shrink_to_fit
-If you have large amounts of data and you are not using reserve you might end up in the worst case with 2<sup>n</sup>+1 elements wasting space of 2<sup>n</sup>-1 * `size_of(yourData)`.
+If you have large amounts of data and you are not using reserve you might end up in the worst case with 2<sup>n</sup>+1 elements wasting space of 2<sup>n</sup>-1 times the `size_of(yourData)`.
 **If you could not reserve the right amount of space before putting in your data, use `shrink_to_fit` to give up any unused free space.**
 

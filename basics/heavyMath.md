@@ -15,7 +15,9 @@ Use [Compiler Explorer](https://godbolt.org/) if unsure.
 
 ## Trigonometric Functions
 Trigonometric functions are very slow.
-[execution time comparison](https://latkin.org/blog/2014/11/09/a-simple-benchmark-of-various-math-operations/#results)
+
+- [execution time comparison](https://latkin.org/blog/2014/11/09/a-simple-benchmark-of-various-math-operations/#results)
+
 **Minimise the usage of sin, asin, cos, acos, tan, atan, atan2, sqrt, exp**
 
 

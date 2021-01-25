@@ -40,10 +40,9 @@ Contributions are welcome!
 - [Compiler](compiler/compiler.md)
 - [constexpr; functions@compiletime](constexpr/constexpr.md)
 - [Intrinsic Functions](intrinsicFunctions/intrinsicFunctions.md)
+- [Libraries](libraries/libraries.md)
 - [Multithreading](multithreading/multithreading.md)
 - [Microcontroller](microcontroller/microcontroller.md)
-- [Profiling](profiling/profiling.md)
-- [std](std/std.md)
 - [Tools](/tools/tools.md)
 
 ## NFAQ

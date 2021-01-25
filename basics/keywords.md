@@ -14,8 +14,8 @@ Flagging a method `const` signals that a call to this method won't change the ob
 
 
 ## const Variable
-A `const` variable does not change its value but is defined at runtime.
-**Mark all variables `const` which do not change there value through there lifetime.**
+A `const` variable does not change its value and is defined at runtime.
+**Mark all variables `const` which do not change value throughout their lifetime.**
 This helps the compiler to optimise your code.
 
 ## consteval Function
@@ -37,13 +37,13 @@ If a function is `constexpr`, it is also `pure` and `const`.
 
 ## constexpr Variable
 The value of a `constexpr` variable is known at compile time and does not change throughout the runtime of the program.
-**Mark all variables `constexpr` which do not change there value through there lifetime and are known at compile time.**
-If a variable is `constexpr`, it is also const.
+**Mark all variables `constexpr` which do not change value throughout their lifetime and are known at compile time.**
+If a variable is `constexpr`, it is also const. Classmembers which do not change are `static constexpr`.
 
 ## constinit static variable
 A variable declared `constinit static` is assured to be calculated at compile time. If it is not, the compiler will throw an error.
 
-###const raw Pointer
+### const raw Pointer
 Just a friendly reminder:
 ```c_cpp
 int i = 42;
@@ -65,6 +65,7 @@ A mutable member variable is allowed to change in the context of a `const method
 #include <mutex>
 class C{
     mutable std::mutex mut;
+    
     void doSomethingThreadsave() const{
         mut.lock();
         // something const
@@ -73,12 +74,12 @@ class C{
 };
 ```
 ## [[nodiscard]]
-Declaring a function `[[nodiscard]]` means that you cannot use the function without using its return value. Though this is mainly to prevent and find bugs this also might help you to optimise code after you found that you use empty() instead of clear().
+Declaring a function `[[nodiscard]]` means that you cannot use the function without using its return value. Though this is mainly to prevent and find bugs this also might help you to optimise code after you found that you used empty() instead of clear().
 
 - [Start Using [[nodiscard]]!](https://www.youtube-nocookie.com/embed/nhsahjY5jdE?rel=0) *~6 min.*
 
 ## noexept
-Flagging a function/method with the `noexept` keyword tells the compiler that no exceptions will happen will no exceptions happen, when this function/method is called. This allows the compiler to optimise things.
+Flagging a function/method with the `noexept` keyword tells the compiler that no exceptions will happen when this function/method is called. This allows the compiler to optimise things.
 **Do mark functions and methods `noexept` if you know that they cannot throw an exception.**
 
 - [When noexcept Really Matters](https://www.youtube-nocookie.com/embed/AG_63_edgUg?rel=0) *~5 min.*
@@ -86,12 +87,12 @@ Flagging a function/method with the `noexept` keyword tells the compiler that no
 ## pure function
 A `pure` function does not use any global state.
 **Mark all functions pure which do not use global values.**
-This helps the compiler to optimise your code and can be combined with `const`. They are also easier to parallelize.
+This helps the compiler to optimise your code and can be combined with `const`. A `pure` function also easier to parallelize.
 
 - [video tutorial](https://www.youtube-nocookie.com/embed/8ZxGABHcu40?rel=0) *~5 min.*
 
 ## static variable
-`Static` variables are essential global variables which get initialised once, exist only once and have a lifetime from there first call until the program is terminated. This has its benefits but `static` variables are guaranteed to be initialised in a thread save fashion meaning there are "hidden" locks. Also on every access there is always a check if the variable is already initialised.
+`Static` variables are essential global variables which get initialised once, exist only once and have a lifetime from their first call until the program is terminated. This has its benefits but `static` variables are guaranteed to be initialised in a thread save fashion meaning there are "hidden" locks. Also on every access there is always a check if the variable is already initialised.
 **If a `static variable` is accessed a s&ast;&ast;&ast;t-ton of times it might me a good idea to instead have a local `reference` (local cash) to the `static variable` instead.**
 
 - [example of cashing and analysis against direct access](https://www.youtube-nocookie.com/embed/B3WWsKFePiM?rel=0) *~20 min.*

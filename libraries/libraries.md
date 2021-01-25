@@ -1,6 +1,6 @@
 [root](../README.md) / libraries.md
 # Libraries
-Some libraries you might need.
+Some libraries you might need or you should have a look at before reinventing the wheel.
 
 ## CTRE: Compile Time Regular Expressions
 - [github](https://github.com/hanickadot/compile-time-regular-expressions)
