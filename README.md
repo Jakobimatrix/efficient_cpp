@@ -46,5 +46,16 @@ Contributions are welcome!
 - [std](std/std.md)
 - [Tools](/tools/tools.md)
 
+## NFAQ
+**Q:** Did you watch all the linked video footage and read all the linked artikles?
+**A:** Yes, sometimes at x1.75 speed though.
+
+**Q:** Do you remember all that stuff?
+**A:** No, hence this repository.
+
+**Q:** Can I take everything here for granted?
+**A:** No, I do make mistakes. Please also use your brain.
+
+
 ## Credits
 If I shamelessly copy pasted from another tutorial (more than a few lines) I credited the author direct there.

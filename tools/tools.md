@@ -41,3 +41,6 @@ void operator delete(void *memory, size_t size){
 
 ## Valgind
 - [address sanitizer, memory sanitizer, visualise which functions do the most work](https://www.youtube-nocookie.com/embed/3l0BQs2ThTo?rel=0) *~8 min.*
+
+## Visual Studio
+- [Semi-Automatic `constexpr` and `noexcept`](https://www.youtube-nocookie.com/embed/1FAcPvb0ZjU?rel=0) *~4 min.*

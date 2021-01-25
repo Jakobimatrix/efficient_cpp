@@ -29,3 +29,25 @@ The options above bundle single optimization flags. Here are 3 non standard Flag
 
 - **-ffast-math** *"Is a shortcut for several options, presenting the least conforming but fastest math mode. It enables -fno-trapping-math, -funsafe-math-optimizations, -ffinite-math-only, -fno-errno-math, -fno-signaling-nans, -fno-rounding-math, -fcx-limited-range and -fno-signed-zeros."*
 
+## Copy Elision
+
+## NRVO (named return value optimisation
+
+## RVO (return value optimisation)
+
+## Special initializer functions
+If you define one of the special constructor methods, you have to define all of them, the compiler wont!
+```c_cpp
+struct S{
+    S() = default; // constructor
+    
+    // special constructors:
+    S(const S &) = default; // copy constructor
+    S(S &&) = default; // move constructor
+    S& operator=(const S &) = default; // copy assignment
+    S& operator=(S&&) = default; // move assignment
+    ~S() = default; // destructor
+};
+```
+
+
