@@ -58,7 +58,7 @@ struct S{
 Beginning at optimisation level O1 the compiler tries to optimise different things:
 
 ### Cache hit optimisation
-The cach is the fastest way to access memory. But is also very small. The compiler tries to load the next instructions and data optimal into the small cache to minimise the need to reload data or instructions:
+The cache is the fastest way to access memory. But is also very small. The compiler tries to load the next instructions and data optimal into the small cache to minimise the need to reload data or instructions:
 
 - [Slide 1 - 11](http://www.math.utk.edu/~msaum/papers/FPOPT2.pdf) *~10 min.*
 - [2D array (manual) example](http://www-h.eng.cam.ac.uk/help/tpl/languages/C++/fasterC++.html#Cachefriendliness) *~2 min.*

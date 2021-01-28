@@ -3,7 +3,7 @@
 Things you can calculate at compile time. This will probably become just a forest of code snippets. Anyways consider: Everything done at compile time is const at run time and can be optimised by your favourite compiler. BTW.: Templates are Turing complete, so there is more possible than you think. *~It's gonna get a little weird, its gonna get a little wild, this is not from around here, this is from another dimension.*
 
 ## Constexpr new
-It is possible to allocate memory at compiletime if we free the memory at compiletime.
+It is possible to allocate memory at compile time if we free the memory at compile time.
 
 - [C++20's `constexpr` `new` Support](https://www.youtube-nocookie.com/embed/FRTmkDiW5MM?rel=0)  *~9 min.*
 

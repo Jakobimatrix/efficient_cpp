@@ -34,7 +34,7 @@ AlsoAlso: I was too lazy to add for every point at which c++ version that point 
 
 Or to quote from [Cambridge; Faster C++](http://www-h.eng.cam.ac.uk/help/tpl/languages/C++/fasterC++.html#Basics):
 
-- A very common piece of advice is "Delay optimization as much as possible, and don't do it if you can avoid it.", Donald Knuth said, "premature optimization is the root of all evil."
+- A very common piece of advice is "Delay optimisation as much as possible, and don't do it if you can avoid it.", Donald Knuth said, "premature optimisation is the root of all evil."
 - A very common piece of advice is "Measure to find out where the bottleneck is, and optimise that."
 - Select appropriate data structures.
 - Pick sensible algorithms - if you're sorting or searching, don't just use the first routine you come across.

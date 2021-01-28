@@ -8,7 +8,7 @@ This is about calling functions and methods as well a passing and returning vari
 * [faster debug code + clean code](https://www.youtube-nocookie.com/embed/qNNAMH9LHA?rel=0) *~5 min.*
 
 ## inline const static Variables
-Static variables as explained [here](keywords.md#staticvariable) have a hidden guard lock. But a const static member variable is defined at compiletime and thus dont need a lock. Now the downside is, that you need to define the variable outside the class/struct. You can use inline to define it like a default variable definition, but that adds a lock.
+Static variables as explained [here](keywords.md#staticvariable) have a hidden guard lock. But a const static member variable is defined at compile time and thus don't need a lock. Now the downside is, that you need to define the variable outside the class/struct. You can use inline to define it like a default variable definition, but that adds a lock.
 
 -  [video tutorial](https://www.youtube-nocookie.com/embed/m7hwL0gHuP4?rel=0) *~6 min.*
 

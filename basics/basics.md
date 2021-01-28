@@ -17,6 +17,6 @@ Inside a loop:
 - avoid if/else/switch --> branchless programming
 - avoid using different memory blocks
 
-** For simple cases the compiler might be able to optimise the loop, but in complex situations tha compiler is lost.**
+** For simple cases the compiler might be able to optimise the loop, but in complex situations the compiler is lost.**
 
 - [See also this 51 Slides with assembly examples](https://www.slideshare.net/MarinaKolpakova/pragmatic-optimization-in-modern-programming-mastering-compiler-optimizations) *~1h*

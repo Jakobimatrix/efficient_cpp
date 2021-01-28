@@ -42,6 +42,6 @@ int doSomething(){
     * Don use it in (small) functions that can be inlined. Since IIFE might stop the compiler from inlineing these which results in a lower performance.
     
 ## Lambdas with States
-Since lambdas are classes in the background, they can holde mutable states:
+Since lambdas are classes in the background, they can hold mutable states:
 
 * [Stateful Lambdas](https://www.youtube-nocookie.com/embed/_1X9D8Z5huA?rel=0) *~5  min.*
