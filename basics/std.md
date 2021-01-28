@@ -1,8 +1,31 @@
 [root](../README.md) / [Basics](basics.md) / std.md
 # std
-## #include &lt;algorithm&gt;
+## #include &lt;algorithm&gt; #include &lt;cmath&gt; #include &lt;numeric&gt;
 Ever found yourself writing the 1000st. for loop over an array/vector/list/map performing a very simple operation?
-**It is very likely that there already is a suitable algorithm in the [algorithm header](https://en.cppreference.com/w/cpp/algorithm)!**
+**It is very likely that there already is a suitable algorithm in std**
+
+- [105 STL Algorithms in Less Than an Hour](https://www.youtube-nocookie.com/embed/2olsGf6JIkU?rel=0)  *~ less than an hour (but more than 57 minutes*
+
+Here is s list of examples:
+
+* `std::gcd` --> Calculates the greatest common divisor.
+* `std::lcm` --> Calculates the least common multiple.
+* `std::iota` --> Fills a given range (container) with incrementing values
+* `std::generate` --> Fills a given range (container) according to a function eg. a mutable lambda) you define.
+* [`std::search`](https://www.youtube-nocookie.com/embed/YUCW_MnksjQ?rel=0) *~8 min.*--> Find a subset inside a linear container (fast)
+* `std::min` --> Returns the minimal value. Can also be used with an initializer list!
+* `std::max` --> Returns the maximal value. Can also be used with an initializer list!
+* `std::fmin` --> Same as `std::min` but ignores NAN. Sadly no initializer list available. [fix](https://www.youtube-nocookie.com/embed/VXgTKrSS1?rel=0)  *~5 min.*
+* `std::fmax` --> Same as `std::max` but ignores NAN. Sadly no initializer list available.
+* `std::min_element` --> Returns the minimal value from a vector/array in a given range.
+* `std::max_element` --> Returns the max value from a vector/array in a given range.
+* [`std::erase`](https://www.youtube-nocookie.com/embed/YGAX509TCQs?rel=0)   *~6 min.*--> Erase every element from a container equal to the given expression.
+* `std::erase_if` --> Erase every element from a container that satisfy the condition given in an callable.
+
+##std::as_const
+Returns a const reference from a non const object. This allows you to use const methods on non-const object variables like: `for(const auto& foo : as_const(container))`. Here begin() and end() are now const. So no deep copy of the container is required. **You basically say: "I wont change the container, I just use its data here."**
+
+* [Q_FOREACH vs range based for](https://www.dvratil.cz/2015/06/qt-containers-and-c11-range-based-loops/) *~15 min. reading time* 
 
 ## std::endl
 The endline operation will flush the stream to the console/file. In most cases this is not necessary especially in loops and costs much time.
@@ -15,6 +38,12 @@ The endline operation will flush the stream to the console/file. In most cases t
 **Use the `at()` function. It has a const implementation, is slightly faster and generates less code (assembly).**
 Don't confuse this with the [] operator of a std::vector! In that case [] is faster.
 - [video tutorial](https://www.youtube-nocookie.com/embed/kDqS1xVWGMg?rel=0)  *~12 min.*
+
+## std::is_const_evaluated
+Allows you to differ inside an `constexpr function` if that function is called at compile time or at runtime.&nbsp;
+ * [usage](keywords.md#constexpr-function)
+
+
 
 ## std::list
 **Don't use a list!**
@@ -95,15 +124,34 @@ This is the standard library implementation for Regular Expressions. It is not u
 ## std::string
 Long strings cause heap allocations.
 **Do not use long strings**
+```cpp
+something
+```
+
+
 The length of a short string depends on the compiler version! Check out the maximal numbers of characters (without \0):
 ```c_cpp
-std::cout << "Capacity: " << string().capacity(); << "\n";
+std::cout << "Capacity: " << string().capacity() << "\n";
 ```
 **Use `std::string_view` instead.**
 **Or use `const char&ast; IF` you don't do any string operations further down the line.**
 
 - [video how to return a string optimal](https://www.youtube-nocookie.com/embed/9mWWNYRHAIQ?rel=0) *~13 min.*
 - [video short string](https://www.youtube-nocookie.com/embed/S7oVXMzTo4w?rel=0&start=224&end=745) *~10 min.*
+
+## std::swap
+If you want the values of two variables to be swapped, std::swap is your friend.
+**But if you have a class that manages memory you should implement an own swap called by `friend swap`.**
+
+* [Why do we need the copy-and-swap idiom?](https://stackoverflow.com/questions/3279543/what-is-the-copy-and-swap-idiom#3279550)  *~10 min. reading time*
+
+## std::to_chars std::from_chars
+The new and better way to convert between character and integer-/floating point values. It is faster than `std::stoi`, `std::atoi` and `std::istringstream`, does not throw, does no dynamic allocate, is memory save and reports errors. It supports scientific and hexadecimal notation.
+
+* [Template for simpler usage // TODO could be better implemented](https://github.com/ljestrada/charconvutils/)
+
+* [Article](https://dzone.com/articles/how-to-use-the-newest-c-string-conversion-routines) *~10 min. reading time*
+
 
 ## std::vector (dynamic array)
 A vector allows you to store data on the heap without having to deal with the allocation and without the need to explicit say how much memory you need (in opposite to an array where you need to know the size at compile time).

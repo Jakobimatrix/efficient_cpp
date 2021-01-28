@@ -10,11 +10,12 @@ To be able to compare different compilers or the result of different code snippe
 - [Basics Video part 1 Optimisation -O example](https://www.youtube-nocookie.com/embed/my39Gpt6bvY?rel=0) *~7 min.*
 - [Basics Video part 2 Optimisation -O example](https://www.youtube-nocookie.com/embed/R3HZJ1h2BVY?rel=0) *~6 min.*
 - [Basics Video part 3 compare compilers example](https://www.youtube-nocookie.com/embed/KpH6ypYfoNs?rel=0) *~7 min.*
-- [Fibonacci in Assembly](https://www.youtube-nocookie.com/embed/yOyaJXpAYZQ?rel=0) *~10 min.*
+- [Fibonacci in Assembly; example](https://www.youtube-nocookie.com/embed/yOyaJXpAYZQ?rel=0) *~10 min.*
+- [Algebraic optimisation done for you; example](https://www.youtube-nocookie.com/embed/yRKRqzekLU4?rel=0) *~8 min.*
 
 ## Compiler flags
 Depending on the given flags your compiled result will end up different.
-
+These flags are compatible with `GCC` and `clang`. If you use `msvc` (the visual studio compiler), there are [similar flags](https://docs.microsoft.com/de-de/cpp/build/reference/compiler-options-listed-by-category?view=msvc-160).
 - [see all options with description](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html)
 - **-O0** *"Reduce compilation time and make debugging produce the expected results. This is the default."*
 - **-O1** *"reduce code size and execution time, without performing any optimisations."* 
@@ -25,7 +26,11 @@ Depending on the given flags your compiled result will end up different.
 - **-Og** *Best for debugging*
 - [comparison of the flags; video](https://www.youtube-nocookie.com/embed/THE14sSDT6A?rel=0&start=227) *~7 min.*
 - **-ffast-math** *"Is a shortcut for several options (included in -Ofast), presenting the least conforming but fastest math mode. It enables -fno-trapping-math, -funsafe-math-optimizations, -ffinite-math-only, -fno-errno-math, -fno-signaling-nans, -fno-rounding-math, -fcx-limited-range and -fno-signed-zeros."*
-
+- **-march=native** Enables vectorisation (multiple instruction at once on CPU)
+      * see [SSE, AVX](../intrinsicFunctions/intrinsicFunctions.md#avx)
+      * But this strongly depends on the architecture!
+      * [system specific build code](https://www.youtube-nocookie.com/embed/_4D1y_KyEzA?rel=0) *~7 min.*
+      * [Build your function optimised for different targets](https://godbolt.org/z/voKZhf) *~1 min.*
 ## Copy Elision
 
 ## NRVO (named return value optimisation
@@ -46,6 +51,6 @@ struct S{
     ~S() = default; // destructor
 };
 ```
-- vgl [std::move](../basics/std.md#stdmove)
+- compare [std::move](../basics/std.md#stdmove)
 
 

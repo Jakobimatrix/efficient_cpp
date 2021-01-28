@@ -15,6 +15,8 @@ That being said if one has the time and endurance to digest the details good rea
 Most things will **not** be based on my experience but rather on the trust that who ever told me do that and this knows his cpp. I am not an expert (yet).
 
 Contributions are welcome!
+Also: As the standard changes and the compiler are changing some things might be not up-to-date anymore or even wrong. Make sure the things you read here still apply before applying them, and if you find they don't, consider opening a pull request.
+AlsoAlso: I was too lazy to add for every point at which c++ version that point is valid. Check it yourself before applying it to your project ;) If your compiler is too old consider an upgrade? The longer you wait the harder it will be to do a upgrade.
 
 ## Todos
 - Find a reliable way to check if links are working.

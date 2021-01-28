@@ -32,13 +32,15 @@ A `constexpr function` can be executed at compile time.
 **Mark all functions `constexpr` which could be called during compile time.**
 If a function is `constexpr`, it is also `pure` and `const`.
 
-- [Is it ever bad to mark a C++ function constexpr? **A: Yes**](https://softwareengineering.stackexchange.com/questions/346993/is-it-ever-bad-to-mark-a-c-function-constexpr)
-
+* [Is it ever bad to mark a C++ function constexpr? **A: Yes**](https://softwareengineering.stackexchange.com/questions/346993/is-it-ever-bad-to-mark-a-c-function-constexpr)
+       1.  You cannot remove this qualifier without an incompatible change to your API
+       2. You might want to use a different (maybe slower) way at compile time than on runtime.
+ * [solution to ii.: `std::is_const_evaluated`](https://www.youtube-nocookie.com/embed/nkhhV5uSSLk?rel=0) *~6 min.*
 
 ## constexpr Variable
 The value of a `constexpr` variable is known at compile time and does not change throughout the runtime of the program.
 **Mark all variables `constexpr` which do not change value throughout their lifetime and are known at compile time.**
-If a variable is `constexpr`, it is also const. Classmembers which do not change are `static constexpr`.
+If a variable is `constexpr`, it is also const. Class members which do not change are `static constexpr`.
 
 ## constinit static variable
 A variable declared `constinit static` is assured to be calculated at compile time. If it is not, the compiler will throw an error.
@@ -58,6 +60,11 @@ By using the word inline you suggest that the function can be inlined: You chang
 
 - [How inline Might Affect The Optimizer](https://www.youtube-nocookie.com/embed/GldFtXZkgYo?rel=0) *~8 min.*
 - [cpp core guidelines about inline](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html#f5-if-a-function-is-very-small-and-time-critical-declare-it-inline) *~2 min.*
+
+## [[likely]] [[unlikely]]
+If you have a condition branch (`if`, `while`, `for`) you can give the compiler a hint which branch/condition is more likely to be hit through out the runtime. This helps the compiler to optimise. This has nothing to do with branch prediction, but with optimal cache usage for the likely case. E.g. it is unlikely to hit the base case of an recursive function. Or it is unlikely to not find an element in a vector which stores elements you want to find.
+
+- [example usage + Benchmark](https://en.cppreference.com/w/cpp/language/attributes/likely) *~ 5 min. reading time*
 
 ## mutable member Variable
 A mutable member variable is allowed to change in the context of a `const method`.

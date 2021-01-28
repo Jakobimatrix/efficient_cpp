@@ -14,7 +14,7 @@ Optimisation from hand is very pain full and inefficient. Especially if you did 
 cppcheck http://cppcheck.sourceforge.net/
 
 ## Fast dirty in-code hacks
-Sometimes it is just faster to have some small debug functions storing and printing metrics like memory usage or time instead of installing and using third party software. 
+Sometimes it is just faster for you to have some small debug functions storing and printing metrics like memory usage or time instead of installing and using third party software. 
 ### Track heap allocations
 ```c_cpp
 // define global
@@ -38,6 +38,10 @@ void operator delete(void *memory, size_t size){
 }
 ```
 - [The video explaining the code](https://www.youtube-nocookie.com/embed/sLlGEUO_EGE?rel=0&start=230&end=782) *~9 min.*
+
+## quick-bench.com
+This site allows you to compare different versions of your algorithm.
+- [IIFE example with std::string](https://www.youtube-nocookie.com/embed/d4nmNYTM1j8?rel=0) *~5 min.*
 
 ## Valgind
 - [address sanitizer, memory sanitizer, visualise which functions do the most work](https://www.youtube-nocookie.com/embed/3l0BQs2ThTo?rel=0) *~8 min.*
