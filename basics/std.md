@@ -22,10 +22,20 @@ Here is s list of examples:
 * [`std::erase`](https://www.youtube-nocookie.com/embed/YGAX509TCQs?rel=0)   *~6 min.*--> Erase every element from a container equal to the given expression.
 * `std::erase_if` --> Erase every element from a container that satisfy the condition given in an callable.
 
+* [most of the algorithms are now constexpr](https://www.youtube-nocookie.com/embed/9YWzXSr2onY?rel=0) *~6 min.* 
+
 ##std::as_const
 Returns a const reference from a non const object. This allows you to use const methods on non-const object variables like: `for(const auto& foo : as_const(container))`. Here begin() and end() are now const. So no deep copy of the container is required. **You basically say: "I wont change the container, I just use its data here."**
 
 * [Q_FOREACH vs range based for](https://www.dvratil.cz/2015/06/qt-containers-and-c11-range-based-loops/) *~15 min. reading time* 
+
+## std::bind
+You can bind a function to a variable and call the function via that variable. You can also bind a lambda to a variable and call the lambda via that variable.
+**Try to avoid std::bind. The compiler is able to optimise your code far better, if you use a lambda expression instead.**
+
+- [prefer-lambdas-over-std::bind](https://github.com/peter-can-write/cpp-notes/blob/master/prefer-lambdas-over-std::bind.md) *~ 6 min.*
+- [Clang Tidy to the rescue: `modernize-avoid-bind`](https://clang.llvm.org/extra/clang-tidy/checks/modernize-avoid-bind.html)
+
 
 ## std::endl
 The endline operation will flush the stream to the console/file. In most cases this is not necessary especially in loops and costs much time.

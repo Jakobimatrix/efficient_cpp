@@ -16,6 +16,7 @@ To be able to compare different compilers or the result of different code snippe
 ## Compiler flags
 Depending on the given flags your compiled result will end up different.
 These flags are compatible with `GCC` and `clang`. If you use `msvc` (the visual studio compiler), there are [similar flags](https://docs.microsoft.com/de-de/cpp/build/reference/compiler-options-listed-by-category?view=msvc-160).
+
 - [see all options with description](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html)
 - **-O0** *"Reduce compilation time and make debugging produce the expected results. This is the default."*
 - **-O1** *"reduce code size and execution time, without performing any optimisations."* 
@@ -31,7 +32,6 @@ These flags are compatible with `GCC` and `clang`. If you use `msvc` (the visual
       * But this strongly depends on the architecture!
       * [system specific build code](https://www.youtube-nocookie.com/embed/_4D1y_KyEzA?rel=0) *~7 min.*
       * [Build your function optimised for different targets](https://godbolt.org/z/voKZhf) *~1 min.*
-## Copy Elision
 
 ## NRVO (named return value optimisation
 
@@ -53,4 +53,19 @@ struct S{
 ```
 - compare [std::move](../basics/std.md#stdmove)
 
+
+## Types of automatic optimisation
+Beginning at optimisation level O1 the compiler tries to optimise different things:
+
+### Cache hit optimisation
+The cach is the fastest way to access memory. But is also very small. The compiler tries to load the next instructions and data optimal into the small cache to minimise the need to reload data or instructions:
+
+- [Slide 1 - 11](http://www.math.utk.edu/~msaum/papers/FPOPT2.pdf) *~10 min.*
+- [2D array (manual) example](http://www-h.eng.cam.ac.uk/help/tpl/languages/C++/fasterC++.html#Cachefriendliness) *~2 min.*
+
+### Elisions
+Reduce the number of necessary Assembly. Here are some examples:
+
+* [unused Array parts](https://www.youtube-nocookie.com/embed/5e3m2cppQ6M?rel=0) *~5 min.*
+* [unused Pointers](https://www.youtube-nocookie.com/embed/FWD1msG8YU4?rel=0) *~5 min.*
 

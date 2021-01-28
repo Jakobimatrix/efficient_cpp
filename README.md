@@ -32,6 +32,15 @@ AlsoAlso: I was too lazy to add for every point at which c++ version that point 
 2. Don't reinvent the wheel: Use well established existing **libraries**. These are already optimised by people who know probably better.
 3. **First** write clean code<sup>[1](#footnote_clean_code)</sup> **Second** write good tests **Third** validate if optimisation is needed **Forth** profile the program, don't do blind optimisation **Fifth** optimise. **Sixth** Check if Tests still work.
 
+Or to quote from [Cambridge; Faster C++](http://www-h.eng.cam.ac.uk/help/tpl/languages/C++/fasterC++.html#Basics):
+
+- A very common piece of advice is "Delay optimization as much as possible, and don't do it if you can avoid it.", Donald Knuth said, "premature optimization is the root of all evil."
+- A very common piece of advice is "Measure to find out where the bottleneck is, and optimise that."
+- Select appropriate data structures.
+- Pick sensible algorithms - if you're sorting or searching, don't just use the first routine you come across.
+- I/O is slow
+
+
 <a name="footnote_clean_code">1</a>: *clean code* is a topic on its own with a lot of discussion and different opinions. Not tackled here.
 
 ## Table of contents

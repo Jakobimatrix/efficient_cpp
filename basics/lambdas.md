@@ -40,3 +40,8 @@ int doSomething(){
     * **Don't use it to construct an object that will be passed to `const &`**
     * Code size might increase dramatically
     * Don use it in (small) functions that can be inlined. Since IIFE might stop the compiler from inlineing these which results in a lower performance.
+    
+## Lambdas with States
+Since lambdas are classes in the background, they can holde mutable states:
+
+* [Stateful Lambdas](https://www.youtube-nocookie.com/embed/_1X9D8Z5huA?rel=0) *~5  min.*
