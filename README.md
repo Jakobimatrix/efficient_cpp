@@ -55,6 +55,7 @@ Or to quote from [Cambridge; Faster C++](http://www-h.eng.cam.ac.uk/help/tpl/lan
 - [Multithreading](multithreading/multithreading.md)
 - [Microcontroller](microcontroller/microcontroller.md)
 - [Tools](/tools/tools.md)
+- [Talks](talks/talks.md)
 
 ## NFAQ
 **Q:** Did you watch all the linked video footage and read all the linked articles?

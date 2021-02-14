@@ -43,12 +43,6 @@ The endline operation will flush the stream to the console/file. In most cases t
 
 - [video tutorial](https://www.youtube-nocookie.com/embed/GMqQOEZYVJQ?rel=0&start=0&end=619) *~10 min.*
 
-## std::map at() vs []
-[] always tries to insert something.
-**Use the `at()` function. It has a const implementation, is slightly faster and generates less code (assembly).**
-Don't confuse this with the [] operator of a std::vector! In that case [] is faster.
-- [video tutorial](https://www.youtube-nocookie.com/embed/kDqS1xVWGMg?rel=0)  *~12 min.*
-
 ## std::is_const_evaluated
 Allows you to differ inside an `constexpr function` if that function is called at compile time or at runtime.&nbsp;
  * [usage](keywords.md#constexpr-function)
@@ -56,8 +50,17 @@ Allows you to differ inside an `constexpr function` if that function is called a
 
 
 ## std::list
-**Don't use a list!**
-// TODO
+**Don't use a list** unless you just store data, but never traverse it. It leads to cache misses.
+- [section of Chandler Carruth "Efficiency with Algorithms, Performance with Data Structures"](https://www.youtube-nocookie.com/embed/fHNmRkzxHWs?rel=0&start=2082&end=2502)  *~7 min.*
+
+## std::map
+**Avoid if possible**: It is, in its core a linked list formed as a binary tree where all the operations lead to traversals of the data and thus to cache misses. If you need a sorted structure: use a std::vector and std::sort.
+
+## std::map at() vs []
+[] always tries to insert something.
+**Use the `at()` function. It has a const implementation, is slightly faster and generates less code (assembly).**
+Don't confuse this with the [] operator of a std::vector! In that case [] is faster.
+- [video tutorial](https://www.youtube-nocookie.com/embed/kDqS1xVWGMg?rel=0)  *~12 min.*
 
 ## std::map as dictionary lookup
 The implementation of std::map does not allow to be `static constexpr`. Instead use this implementation from Jason Turner:
@@ -162,6 +165,8 @@ The new and better way to convert between character and integer-/floating point 
 
 * [Article](https://dzone.com/articles/how-to-use-the-newest-c-string-conversion-routines) *~10 min. reading time*
 
+## std::unordered_map
+**Don't use if possible** Same problem as `std::map`: The buckets holding the key value pairs are linked lists.
 
 ## std::vector (dynamic array)
 A vector allows you to store data on the heap without having to deal with the allocation and without the need to explicit say how much memory you need (in opposite to an array where you need to know the size at compile time).

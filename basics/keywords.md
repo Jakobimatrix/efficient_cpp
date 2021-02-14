@@ -65,6 +65,12 @@ By using the word inline you suggest that the function can be inlined: You chang
 If you have a condition branch (`if`, `while`, `for`) you can give the compiler a hint which branch/condition is more likely to be hit through out the runtime. This helps the compiler to optimise. This has nothing to do with branch prediction, but with optimal cache usage for the likely case. E.g. it is unlikely to hit the base case of an recursive function. Or it is unlikely to not find an element in a vector which stores elements you want to find.
 
 - [example usage + Benchmark](https://en.cppreference.com/w/cpp/language/attributes/likely) *~ 5 min. reading time*
+* This is a c++ 20 feature. But you can write a macro for this:
+* [`__builtin_expect`](https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html#index-g_t_005f_005fbuiltin_005fexpect-4159)
+```c_cpp
+#define UNLIKELY(x) __builtin_expect((bool)(x), 0)
+#define LIKELY(x) __builtin_expect((bool)(x),1)
+```
 
 ## mutable member Variable
 A mutable member variable is allowed to change in the context of a `const method`.

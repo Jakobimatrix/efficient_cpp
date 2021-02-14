@@ -7,6 +7,7 @@ These are small  optimisations which are very easy to do with no or very little 
 - [Heavy Maths](heavyMath.md)
 - [Keywords](keywords.md)
 - [Lambdas](lambdas.md)
+- [Memory](memory.md)
 - [std](std.md)
 - [Functions and Methods](functionsAndMethods.md)
 
