@@ -69,3 +69,7 @@ Reduce the number of necessary Assembly. Here are some examples:
 * [unused Array parts](https://www.youtube-nocookie.com/embed/5e3m2cppQ6M?rel=0) *~5 min.*
 * [unused Pointers](https://www.youtube-nocookie.com/embed/FWD1msG8YU4?rel=0) *~5 min.*
 
+## Warnings
+**Turn on Compiler Warnings and make them errors!**
+
+- [Jason Turner (lefticus) has a neat cpp_starter_project repository. Here is his CMake File managing compiler warnings.](https://github.com/lefticus/cpp_starter_project/blob/master/cmake/CompilerWarnings.cmake)

@@ -24,3 +24,9 @@ Depending on the architecture there is a limit of how many variables can be load
 **Pass multiple variables inside a struct/object especially if they are always passed together through multiple functions/methods.**
 
 - [example video](https://www.youtube-nocookie.com/embed/FwsO12x8nyM?rel=0) *~8 min.*
+
+## Return
+If you have a function with branches which decide what to return, make sure to do it the right way: **Make sure you don't implicit invoke the copy constructor by accident.**
+
+- [std::string](https://www.youtube-nocookie.com/embed/9mWWNYRHAIQ?rel=0) *~13 min.*
+- [std::optional (+ extra bit: GCC vs. clang)](https://www.youtube-nocookie.com/embed/Bu1AEze14Ns?rel=0&start=2436&end=2754) *~6 min.*
