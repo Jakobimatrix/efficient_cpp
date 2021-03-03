@@ -14,6 +14,8 @@ That being said if one has the time and endurance to digest the details good rea
 **Disclaimer**
 Most things will **not** be based on my experience but rather on the trust that who ever told me do that and this knows his cpp. I am not an expert (yet).
 
+Also this is **not** a guide for *Best Practice*. Actually some things you read here are in opposite to *Best Practice* or are in conflict with them. *Best Practice aims for clean, maintainable, readable code and tries to introduces structures/idioms that will guide you around possible pitfalls of cpp.* If you are interested in that topic; I recommend you have a look at the [CppCoreGuidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html) and [Jason Turner's (lefticus) cppbestpractices](https://github.com/lefticus/cppbestpractices).
+
 Contributions are welcome!
 Also: As the standard changes and the compiler are changing some things might be not up-to-date anymore or even wrong. Make sure the things you read here still apply before applying them, and if you find they don't, consider opening a pull request.
 AlsoAlso: I was too lazy to add for every point at which c++ version that point is valid. Check it yourself before applying it to your project ;) If your compiler is too old consider an upgrade? The longer you wait the harder it will be to do a upgrade.
