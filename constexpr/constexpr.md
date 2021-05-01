@@ -133,3 +133,49 @@ int main()
 ## Regular Expressions (CTRE)
 - [github](https://github.com/hanickadot/compile-time-regular-expressions)
 - [a ton of talks](https://compile-time.re/)
+
+## std::vector
+A recent c++20 feature allows you do have `std::vector` in a constexpr environment. 
+
+```cpp
+#include <vector>
+#include <array>
+#include <iostream>
+
+constexpr auto calculateDynamic(bool a, bool b){
+	std::vector<int> vec;
+	
+	if(a){
+		vec.push_back(42);
+	}
+	if(b){
+		vec.push_back(24);
+	}
+	return vec;
+}
+
+constexpr auto getSize(bool a, bool b){
+	const auto v =  calculateDynamic(a,b);
+	return v.size();
+}
+
+template<size_t s>
+constexpr auto getArray(bool a, bool b){
+	const auto v =  calculateDynamic(a,b);
+	std::array<int, s> arr;
+	std::copy(begin(v), end(v), begin(arr));
+	return arr;
+}
+
+int main(){
+	constexpr bool a = true;
+	constexpr bool b = false;
+	constexpr auto size s = getSize(a,b);
+	constexpr auto dyn_array = getArray<s>(a,b);
+	for(const auto &i : dyn_array){
+		std::cout << "Number " << i << "\n";
+	}
+	return 0;
+}
+
+```
