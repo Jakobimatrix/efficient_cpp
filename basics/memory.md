@@ -26,6 +26,10 @@ But first, a table:
 # Cache
 // TODO
 
+#CPU
+Depending on the CPU your program is running on/compiled for, different optimisations will be done for you. Though you should not relay on them you should definetly know them to understand different behaviours.
+
+* [5 Things a modern CPU is doing](https://www.youtube-nocookie.com/embed/S4mKJxbrkT4?rel=0) *~11 min.*
 
 # Ram
 // TODO
