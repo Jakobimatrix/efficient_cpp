@@ -55,11 +55,44 @@ const int* const ptr2 = &i; // Can not change value or the pointer.
 ```
 
 ## inline
-By using the word inline you suggest that the function can be inlined: You change an internal threshold value which the compiler computes whether it thinks that it is good or bad to inline the function. The thing is, that whether this is a good or a bad idea also depends on the architecture.
+By using inline you suggest that the function can be inlined: You change an internal threshold value which the compiler computes whether it thinks that it is good or bad to inline the function. The thing is, that whether this is a good or a bad idea also depends on the architecture.
 **TODO different opinions on that topic ;(**
 
 - [How inline Might Affect The Optimizer](https://www.youtube-nocookie.com/embed/GldFtXZkgYo?rel=0) *~8 min.*
 - [cpp core guidelines about inline](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html#f5-if-a-function-is-very-small-and-time-critical-declare-it-inline) *~2 min.*
+
+### inline (globals)
+Since c++17 you can ensure that a global variable/function is only initialized once using the `inline` keyword. Prior c++17 you will need to make globals static which comes with its own problems see [keyword static](keywords.md#static-variable) so:
+
+```c_cpp
+// If you define NON TRIVIAL globals, always force initialisation of that global in the same header file to make sure it is initialized properly.
+
+#include <string>
+// cpp17 and later
+inline std::string my_string = "123";
+
+// pre cpp17
+namespace global {
+std::string& my_string() {
+	static std::string s = "123";
+	return s;
+}
+}
+// but because of static --> atomic, this is slow
+// so define a static reference to it to avoid mutex check
+static auto& my_string = global::my_string();
+
+// even faster access (only do this if that access is bottleneck of your application)
+namespace global {
+template <class=void>
+struct my_globals{
+	static std::string my_string;
+};
+template <>
+std::string my_globals<>::my_string = "123";
+}
+static auto& m_string = global::my_globals<>::my_string;
+```
 
 ## [[likely]] [[unlikely]]
 If you have a condition branch (`if`, `while`, `for`) you can give the compiler a hint which branch/condition is more likely to be hit through out the runtime. This helps the compiler to optimise. This has nothing to do with branch prediction, but with optimal cache usage for the likely case. E.g. it is unlikely to hit the base case of an recursive function. Or it is unlikely to not find an element in a vector which stores elements you want to find.
@@ -68,8 +101,8 @@ If you have a condition branch (`if`, `while`, `for`) you can give the compiler 
 * This is a c++ 20 feature. But you can write a macro for this:
 * [`__builtin_expect`](https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html#index-g_t_005f_005fbuiltin_005fexpect-4159)
 ```c_cpp
-#define UNLIKELY(x) __builtin_expect((bool)(x), 0)
-#define LIKELY(x) __builtin_expect((bool)(x),1)
+#define UNLIKELY(x) __builtin_expect(static_cast<bool>(x), false)
+#define LIKELY(x) __builtin_expect(static_cast<bool>(x),true)
 ```
 
 ## mutable member Variable
