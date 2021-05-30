@@ -24,7 +24,7 @@ Here is s list of examples:
 
 * [most of the algorithms are now constexpr](https://www.youtube-nocookie.com/embed/9YWzXSr2onY?rel=0) *~6 min.* 
 
-##std::as_const
+## std::as_const
 Returns a const reference from a non const object. This allows you to use const methods on non-const object variables like: `for(const auto& foo : as_const(container))`. Here begin() and end() are now const. So no deep copy of the container is required. **You basically say: "I wont change the container, I just use its data here."**
 
 * [Q_FOREACH vs range based for](https://www.dvratil.cz/2015/06/qt-containers-and-c11-range-based-loops/) *~15 min. reading time* 
