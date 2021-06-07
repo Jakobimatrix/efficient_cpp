@@ -62,10 +62,10 @@ By using inline you suggest that the function can be inlined: You change an inte
 - [cpp core guidelines about inline](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html#f5-if-a-function-is-very-small-and-time-critical-declare-it-inline) *~2 min.*
 
 ### inline (globals)
-Since c++17 you can ensure that a global variable/function is only initialized once using the `inline` keyword. Prior c++17 you will need to make globals static which comes with its own problems see [keyword static](keywords.md#static-variable) so:
+Since c++17 you can ensure that a global variable/function is only initialised once using the `inline` keyword. Prior c++17 you will need to make globals static which comes with its own problems see [keyword static](keywords.md#static-variable) so:
 
 ```c_cpp
-// If you define NON TRIVIAL globals, always force initialisation of that global in the same header file to make sure it is initialized properly.
+// If you define NON TRIVIAL globals, always force initialisation of that global in the same header file to make sure it is initialised properly.
 
 #include <string>
 // cpp17 and later

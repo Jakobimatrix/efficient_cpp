@@ -4,10 +4,19 @@
 Ever found yourself writing the 1000st. for loop over an array/vector/list/map performing a very simple operation?
 **It is very likely that there already is a suitable algorithm in std**
 
-- [105 STL Algorithms in Less Than an Hour](https://www.youtube-nocookie.com/embed/2olsGf6JIkU?rel=0)  *~ less than an hour (but more than 57 minutes*
+- [why to use the standard instead of your own algorithms](https://www.youtube-nocookie.com/embed/atAd8gzaM1g?rel=0)  *~ 23 min.*
+	* It is well documented
+	* It is very well tested
+	* There are a ton of people working on the standard, don't think that you can do any better
+	* It is open source. errors (if occur) are going to be fixed faster than you can pay someone to do it.
+- [105 STL Algorithms in Less Than an Hour](https://www.youtube-nocookie.com/embed/2olsGf6JIkU?rel=0)  *~ less than an hour (but more than 57 minutes)*
 
 Here is s list of examples:
 
+* `std::accumulate` --> Sums up a given range (container). You can also pass an other operator than *plus*. (Its an (discrete) Integral operation)
+* `std::adjacent_difference` --> Calculates the local difference in a given range (container), (It is a (discrete) differential operation). You can also pass an other operator than *minus*
+* `std::inner_product` --> Computes the inner product of two containers, given two (equal large) ranges. You can also pass an other operator than *multiplication*. (It is a dot product operation)
+* `std::partial_sum` --> Calculates the local accumulation in a given range (container) (similar to std::adjacent_difference, but uses the result of the last operation rather than the old value). You can also pass an other operator than *plus*.
 * `std::gcd` --> Calculates the greatest common divisor.
 * `std::lcm` --> Calculates the least common multiple.
 * `std::iota` --> Fills a given range (container) with incrementing values
@@ -21,7 +30,6 @@ Here is s list of examples:
 * `std::max_element` --> Returns the max value from a vector/array in a given range.
 * [`std::erase`](https://www.youtube-nocookie.com/embed/YGAX509TCQs?rel=0)   *~6 min.*--> Erase every element from a container equal to the given expression.
 * `std::erase_if` --> Erase every element from a container that satisfy the condition given in an callable.
-
 * [most of the algorithms are now constexpr](https://www.youtube-nocookie.com/embed/9YWzXSr2onY?rel=0) *~6 min.* 
 
 ##std::as_const
