@@ -54,6 +54,33 @@ int* const ptr1 = &i; // Can change value via pointer. Can not change the pointe
 const int* const ptr2 = &i; // Can not change value or the pointer.
 ```
 
+## explicit
+A function or method declared `explicit` does not allow to be called with variables which could be convertet into the defined parameter types. This helps avoiding unexpected and potentailly heavy conversations or even hidden bugs:
+```c_cpp
+void setName1(std::string& name);
+void explicit setName2(std::string& name);
+
+setName1("Lukas der Lokomotivführer"); // silent conversation from c_string into std::string, dynamic allocation for long strings
+setName2("Lukas der Lokomotivführer"); // compile time error
+
+...
+
+template <class T>
+explicit (!std::is_trivial_v<T>) setData(T); // only explicit for trivial data like int, double
+
+...
+
+void removeMember1(unsigned int member_id);
+explicit void removeMember2(unsigned int member_id);
+
+int member_x = ...;
+removeMember1(member_x); // silent conversation from int to unsigned int (even if its negative)
+removeMember2(member_x); // compile time error
+if(member_x >= 0){
+	removeMember2(static_cast<unsigned int>(member_x)); // Ok dear compiler, I know what I do.
+}
+```
+
 ## inline
 By using inline you suggest that the function can be inlined: You change an internal threshold value which the compiler computes whether it thinks that it is good or bad to inline the function. The thing is, that whether this is a good or a bad idea also depends on the architecture.
 **TODO different opinions on that topic ;(**
