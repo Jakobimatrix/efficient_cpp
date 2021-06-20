@@ -55,7 +55,7 @@ const int* const ptr2 = &i; // Can not change value or the pointer.
 ```
 
 ## explicit
-A function or method declared `explicit` does not allow to be called with variables which could be convertet into the defined parameter types. This helps avoiding unexpected and potentailly heavy conversations or even hidden bugs:
+A function or method declared `explicit` does not allow to be called with variables which could be converted into the defined parameter types. This helps avoiding unexpected and potentially heavy conversations or even hidden bugs:
 ```c_cpp
 void setName1(std::string& name);
 void explicit setName2(std::string& name);
@@ -77,7 +77,7 @@ int member_x = ...;
 removeMember1(member_x); // silent conversation from int to unsigned int (even if its negative)
 removeMember2(member_x); // compile time error
 if(member_x >= 0){
-	removeMember2(static_cast<unsigned int>(member_x)); // Ok dear compiler, I know what I do.
+	removeMember2(static_cast<unsigned int>(member_x)); // OK dear compiler, I know what I do.
 }
 ```
 

@@ -11,6 +11,20 @@ A numerical library with over 1000 functions you probably tried to code on your 
 
 - [Function areas in GSL](https://www.gnu.org/software/gsl/#subjects)
 
+## Eigen
+is a library for vector geometry.
+It implements very efficient vector/matrix operations as well as providing solvers for linear equations. Some highlights:
+
+* vector geometry
+* dynamic matrices
+* affine transformation, quaternionen
+* matrix transpose / inverse / pseudo-inverse
+* Eigenvalues and Eingenvector calculation
+* Linear equation solver for b = A*x
+* SVD decomposition, QR decomposition
+
+Sub page: [>> eigen.md](eigen.md)
+
 ## PMR
 To avoid heap allocations PMR uses a monotonic buffer on the stack which one has to reserve beforehand. This requires knowledge about when in the program how much memory is needed and when you can give up resources again. You also need to write your own allocator functions to manage the data inside the monotonic buffer. It works nicely with all the std::container.
 **Keep in mind: PMR doesn't free on its own!**
