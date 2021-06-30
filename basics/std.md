@@ -185,12 +185,16 @@ A heap allocations of a `std::vector` occurs always if the capacity (the number 
 
 ### emplace_back
 The operation push_back does a move operation and results in a call of the destructor twice.
-**Whenever possible use emplace_back().**
+**Use emplace_back() if you create a new object. Use push_back() if you already have an object.**
 ```c_cpp
 std::vector<YourClass> v;
 v.push_back(YourClass(...)); // BAD
 v.emplace_back(...); // GOOD
 v.emplace_back(YourClass(...)); // NO!!!
+YourClass yc = ...
+...
+v.push_back(yc); // GOOD
+v.emplace_back(yc); // NO!!!
 ```
 - [video tutorial](https://www.youtube-nocookie.com/embed/uwv1uvi1OTU?rel=0) *~5 min.*
 
