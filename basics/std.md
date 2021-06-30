@@ -187,17 +187,24 @@ A heap allocations of a `std::vector` occurs always if the capacity (the number 
 The operation push_back does a move operation and results in a call of the destructor twice.
 **Use emplace_back() if you create a new object. Use push_back() if you already have an object.**
 ```c_cpp
+// when to emplace_back():
 std::vector<YourClass> v;
 v.push_back(YourClass(...)); // BAD
 v.emplace_back(...); // GOOD
 v.emplace_back(YourClass(...)); // NO!!!
+
+// when to push_back():
 YourClass yc = ...
 ...
-v.push_back(yc); // GOOD
-v.emplace_back(yc); // NO!!!
+v.push_back(yc); // nope
+v.push_back(std::move(yc)); // GOOD, but doesn't move if yc is const but creates a copy instead!
+v.emplace_back(yc); // nope
+
+// BUT one more thing: Do you really need the temporary variable yc here?? See second video.
 ```
 - [video tutorial](https://www.youtube-nocookie.com/embed/uwv1uvi1OTU?rel=0) *~5 min.*
-
+- [benchmark](https://www.youtube-nocookie.com/embed/jKS9dSHkAZY?rel=0&start=525) *~7 min.*
+- 
 ### reserve
 `std::vector` allocates memory on the heap if necessary like so: 2->4->8->16->...
 **Reduce the amount of heap allocations by calculating how many elements you are going to put into the vector. If you don't know exactly how many elements to expect, estimate upwards. If you actually know the amount of data at compile time, use an `std::array`.**
