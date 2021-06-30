@@ -204,7 +204,7 @@ v.emplace_back(yc); // nope
 ```
 - [video tutorial](https://www.youtube-nocookie.com/embed/uwv1uvi1OTU?rel=0) *~5 min.*
 - [benchmark](https://www.youtube-nocookie.com/embed/jKS9dSHkAZY?rel=0&start=525) *~7 min.*
-- 
+
 ### reserve
 `std::vector` allocates memory on the heap if necessary like so: 2->4->8->16->...
 **Reduce the amount of heap allocations by calculating how many elements you are going to put into the vector. If you don't know exactly how many elements to expect, estimate upwards. If you actually know the amount of data at compile time, use an `std::array`.**
