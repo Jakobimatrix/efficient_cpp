@@ -28,8 +28,23 @@ If you use an index to access data inside a container, use `size_t` (64 bit unsi
 for(int i = start; i < end; ++i) {
   data[i].do(); // implicit conversation
 }
+
 for(size_t i = start; i < end; ++i) {
   data[i].do(); // OK
 }
 ```
 - [C++ Weekly - Ep 277 - Quick Perf Tip: Avoid Integer Conversions](https://www.youtube-nocookie.com/embed/jKpIZ4UcaNw?rel=0) *~10 min.*
+
+### Iterator based loops
+You should always prefer the range based for loop which is the fastest implementation of a for loop over all elements. If you iterate manually make sure to do the right comparison to check for the end of the container.
+```c_cpp
+// bad since the comparison < is slower than !=
+for(auto it = container.start(); it < container.end(); it++) {...}
+
+// good
+for(auto it = container.start(); it != container.end(); it++) {...}
+
+// even better
+for(const auto &data : container) {...}
+```
+- [C++ Weekly - Ep 279 - Quick Perf Tip: Use The Right Iterator Comparison](https://www.youtube-nocookie.com/embed/oelQ4uAw2WQ?rel=0) *~8 min.*
