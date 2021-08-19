@@ -1,6 +1,6 @@
 [root](../README.md) / basics.md
 # Basics
-These are small  optimizations which are very easy to do with no or very little drawbacks and thus should be done automatically.
+These are small  optimisations which are very easy to do with no or very little drawbacks and thus should be done automatically.
 
 ## Chapter
 
@@ -18,7 +18,7 @@ Inside a loop:
 - avoid if/else/switch --> branchless programming
 - avoid using different memory blocks
 
-** For simple cases the compiler might be able to optimize the loop, but in complex situations the compiler is lost.**
+** For simple cases the compiler might be able to optimise the loop, but in complex situations the compiler is lost.**
 
 - [See also this 51 Slides with assembly examples](https://www.slideshare.net/MarinaKolpakova/pragmatic-optimization-in-modern-programming-mastering-compiler-optimizations) *~1h*
 

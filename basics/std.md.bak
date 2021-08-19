@@ -39,7 +39,7 @@ Returns a const reference from a non const object. This allows you to use const 
 
 ## std::bind
 You can bind a function to a variable and call the function via that variable. You can also bind a lambda to a variable and call the lambda via that variable.
-**Try to avoid std::bind. The compiler is able to optimize your code far better, if you use a lambda expression instead.**
+**Try to avoid std::bind. The compiler is able to optimise your code far better, if you use a lambda expression instead.**
 
 - [prefer-lambdas-over-std::bind](https://github.com/peter-can-write/cpp-notes/blob/master/prefer-lambdas-over-std::bind.md) *~ 6 min.*
 - [Clang Tidy to the rescue: `modernize-avoid-bind`](https://clang.llvm.org/extra/clang-tidy/checks/modernize-avoid-bind.html)
@@ -131,7 +131,7 @@ In that case you should understand the **rule of five**
 - [RAII and the Rule of zero/three/five](https://www.youtube-nocookie.com/embed/7Qgd9B1KuMQ?rel=0&start=1263&end=2960) *~29 min.*
 - [construction/assignment/destruction Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#cctor-constructors-assignments-and-destructors) *~2 h.*
 
-However if used wrong it might hinder the compiler to optimize your code or implies a wrong picture of the situation. Let the compiler help you by enabling **-Wredundant-move** and **-Wpessimizing-move**
+However if used wrong it might hinder the compiler to optimise your code or implies a wrong picture of the situation. Let the compiler help you by enabling **-Wredundant-move** and **-Wpessimizing-move**
 
 - [Article: When not to use std::move](https://developers.redhat.com/blog/2019/04/12/understanding-when-not-to-stdmove-in-c/)  *~6 min.*
 - [Video: You Cannot Move From Const](https://www.youtube-nocookie.com/embed/ZKaoR3dP9uM?rel=0) *~6 min.*
@@ -181,7 +181,7 @@ A vector allows you to store data on the heap without having to deal with the al
 
 A heap allocations of a `std::vector` occurs always if the capacity (the number of elements that can be held in currently allocated storage) equals the numbers of elements in the vector and you `push_back` or `emplace_back` another element. In that case `std::vector` will allocate memory on the heap of twice the current capacity and move all the data from the current heap to the new allocated space since the data in the vector is always one block in memory.
 
-- [optimize usage of std::vector](https://www.youtube-nocookie.com/embed/HcESuwmlHEY?rel=0&start=67&end=540) *~8 min.*
+- [optimise usage of std::vector](https://www.youtube-nocookie.com/embed/HcESuwmlHEY?rel=0&start=67&end=540) *~8 min.*
 
 ### emplace_back
 The operation push_back does a move operation and results in a call of the destructor twice.

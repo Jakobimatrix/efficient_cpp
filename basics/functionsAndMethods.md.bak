@@ -1,8 +1,8 @@
 [root](../README.md) / [Basics](basics.md) / functionsAndMethods.md
 # Functions/Methods
-This is about calling functions and methods as well a passing and returning variables. Optimizing via keywords can be found in [Basics/keywords.md](keywords.md).
+This is about calling functions and methods as well a passing and returning variables. Optimising via keywords can be found in [Basics/keywords.md](keywords.md).
 
-## Default Member Initialization
+## Default Member Initialisation
 **Should be done instead of using an initializer list.**
 
 * [faster debug code + clean code](https://www.youtube-nocookie.com/embed/qNNAMH9LHA?rel=0) *~5 min.*

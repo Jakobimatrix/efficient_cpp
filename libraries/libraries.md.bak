@@ -19,7 +19,7 @@ It implements very efficient vector/matrix operations as well as providing solve
 * dynamic matrices
 * affine transformation, quaternionen
 * matrix transpose / inverse / pseudo-inverse
-* Eigenvalues and Eigenvector calculation
+* Eigenvalues and Eingenvector calculation
 * Linear equation solver for b = A*x
 * SVD decomposition, QR decomposition
 

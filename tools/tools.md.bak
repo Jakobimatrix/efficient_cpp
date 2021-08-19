@@ -5,7 +5,7 @@ Optimisation from hand is very pain full and inefficient. Especially if you did 
 
 - see where optimisation is really needed
 - see what kind of optimisation is needed
-- find possible optimizations automatically
+- find possible optimisations automatically
 
 ## CppCon 2015: Chandler Carruth "Tuning C++: Benchmarks, and CPU's, and Compilers! Oh My!"
 * [link; it's mostly a live performance ](https://www.youtube-nocookie.com/embed/nXaxk27zwlk?rel=0) *~1 h. 15 min. + Questions*
@@ -14,7 +14,7 @@ Optimisation from hand is very pain full and inefficient. Especially if you did 
 	* Problems with benchmarks (Googles Micro benchmark)
 	* Understand your measurement
 	* profilers (perf) and problems (with the compiler)
-	* explains the code below under **Turn off the optimizer (Compiler)**
+	* explains the code below under **Turn off the optimiser (Compiler)**
 
 ## Benchmarking tools
 ### Googles Micro benchmark library
@@ -53,7 +53,7 @@ void operator delete(void *memory, size_t size){
 ```
 - [The video explaining the code](https://www.youtube-nocookie.com/embed/sLlGEUO_EGE?rel=0&start=230&end=782) *~9 min.*
 
-### Turn off the optimizer (Compiler)
+### Turn off the optimiser (Compiler)
 * does not work on Microsoft compiler
 ```c_cpp
 // Tell the compiler that the given data might be written into a global variable
@@ -114,7 +114,7 @@ This site allows you to compare different versions of your algorithm.
 - [IIFE example with std::string](https://www.youtube-nocookie.com/embed/d4nmNYTM1j8?rel=0) *~5 min.*
 
 ## Valgrind
-- [address sanitizer, memory sanitizer, visualize which functions do the most work](https://www.youtube-nocookie.com/embed/3l0BQs2ThTo?rel=0) *~8 min.*
+- [address sanitizer, memory sanitizer, visualise which functions do the most work](https://www.youtube-nocookie.com/embed/3l0BQs2ThTo?rel=0) *~8 min.*
 
 ## Visual Studio
 - [Semi-Automatic `constexpr` and `noexcept`](https://www.youtube-nocookie.com/embed/1FAcPvb0ZjU?rel=0) *~4 min.*

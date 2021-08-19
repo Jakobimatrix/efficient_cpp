@@ -8,7 +8,7 @@ The thing is, this is only true if you do it *right*, whatever that means...
 I use cpp since 2013 and am now on a point where I cannot remember every fancy detail so I thought about creating something where I can fast search for a specific thing I have learned. But I don't want to create tutorials, there are already enough out there done by people far more competent. Instead this should be a glossary linking every *problem* (I encountered) to the a tutorial site. Here I try to find tutorials which are **on point**:
 Problem --> Solution
 does/dont’s  --> Example
-Much like the [CppCoreGuidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html) I will try to summarize with as little words as possible.
+Much like the [CppCoreGuidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html) I will try to summarise with as little words as possible.
 That being said if one has the time and endurance to digest the details good reading material or talks will be separately liked too. I try to add a tldr in those cases.
 
 **Disclaimer**
@@ -31,13 +31,13 @@ AlsoAlso: I was too lazy to add for every point at which c++ version that point 
 
 ## Before you throw every optimisation onto your code base
 1. There are some things you can and should always do. These are covered in **basics**. 
-2. Don't reinvent the wheel: Use well established existing **libraries**. These are already optimized by people who know probably better.
-3. **First** write clean code<sup>[1](#footnote_clean_code)</sup> **Second** write good tests **Third** validate if optimisation is needed **Forth** profile the program, don't do blind optimisation **Fifth** optimize. **Sixth** Check if Tests still work.
+2. Don't reinvent the wheel: Use well established existing **libraries**. These are already optimised by people who know probably better.
+3. **First** write clean code<sup>[1](#footnote_clean_code)</sup> **Second** write good tests **Third** validate if optimisation is needed **Forth** profile the program, don't do blind optimisation **Fifth** optimise. **Sixth** Check if Tests still work.
 
 Or to quote from [Cambridge; Faster C++](http://www-h.eng.cam.ac.uk/help/tpl/languages/C++/fasterC++.html#Basics):
 
 - A very common piece of advice is "Delay optimisation as much as possible, and don't do it if you can avoid it.", Donald Knuth said, "premature optimisation is the root of all evil."
-- A very common piece of advice is "Measure to find out where the bottleneck is, and optimize that."
+- A very common piece of advice is "Measure to find out where the bottleneck is, and optimise that."
 - Select appropriate data structures.
 - Pick sensible algorithms - if you're sorting or searching, don't just use the first routine you come across.
 - I/O is slow

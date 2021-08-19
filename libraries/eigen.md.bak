@@ -2,7 +2,7 @@
 # Eigen
 
 ## Affine Transformation, rotation(), linear()
-If you need the rotation matrix of a given affine transformation `Affine3d, Isometry3d` consider use the `linear()` method instead of the `rotation()` method. `linear()` returns the writable `Block<MatrixType,Dim,Dim,>` raw data, which can be optimized further by the compiler while `rotation()` returns a new (copy) `Transformation` object.
+If you need the rotation matrix of a given affine transformation `Affine3d, Isometry3d` consider use the `linear()` method instead of the `rotation()` method. `linear()` returns the writable `Block<MatrixType,Dim,Dim,>` raw data, which can be optimised further by the compiler while `rotation()` returns a new (copy) `Transformation` object.
 
 ```c_cpp
 Eigen::Isometry3d T ...

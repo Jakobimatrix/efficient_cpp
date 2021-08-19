@@ -33,10 +33,10 @@ int doSomething(){
 ```
 
 ## IIFE immediately invoked function expressions
-**Use it to initialize const variables instead of declaring it and using if statements to define them.**
+**Use it to initialise const variables instead of declaring it and using if statements to define them.**
 
-* [example const variable initialization](https://www.youtube-nocookie.com/embed/d4nmNYTM1j8?rel=0) *~5  min.*
-* [detailed examples const variable initialization](https://www.youtube-nocookie.com/embed/9i2ZirXdrVA?rel=0&end=1030) *~17  min.*
+* [example const variable initialisation](https://www.youtube-nocookie.com/embed/d4nmNYTM1j8?rel=0) *~5  min.*
+* [detailed examples const variable initialisation](https://www.youtube-nocookie.com/embed/9i2ZirXdrVA?rel=0&end=1030) *~17  min.*
     * **Don't use it to construct an object that will be passed to `const &`**
     * Code size might increase dramatically
     * Don use it in (small) functions that can be inlined. Since IIFE might stop the compiler from inlineing these which results in a lower performance.
