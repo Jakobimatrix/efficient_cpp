@@ -1,12 +1,12 @@
 [root](../README.md) / [Basics](basics.md) / keywords.md
 # Keywords
-The following keywords should be used if possible to help the compiler to optimise the code.
+The following keywords should be used if possible to help the compiler to optimize the code.
 
 
 ## const Function
 A `const` function does not change any global state.
 **Mark all functions `const` which do not change global values.**
-This helps the compiler to optimise your code and can be combined with `pure`.
+This helps the compiler to optimize your code and can be combined with `pure`.
 
 ## const Method
 Flagging a method `const` signals that a call to this method won't change the object.
@@ -16,7 +16,7 @@ Flagging a method `const` signals that a call to this method won't change the ob
 ## const Variable
 A `const` variable does not change its value and is defined at runtime.
 **Mark all variables `const` which do not change value throughout their lifetime.**
-This helps the compiler to optimise your code.
+This helps the compiler to optimize your code.
 
 ## consteval Function
 A call to a function flagged `consteval` must be direct or indirect result in an compile time known expression. So it can not be called during runtime.
@@ -89,7 +89,7 @@ By using inline you suggest that the function can be inlined: You change an inte
 - [cpp core guidelines about inline](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html#f5-if-a-function-is-very-small-and-time-critical-declare-it-inline) *~2 min.*
 
 ### inline (globals)
-Since c++17 you can ensure that a global variable/function is only initialised once using the `inline` keyword. Prior c++17 you will need to make globals static which comes with its own problems see [keyword static](keywords.md#static-variable) so:
+Since c++17 you can ensure that a global variable/function is only initialized once using the `inline` keyword. Prior c++17 you will need to make globals static which comes with its own problems see [keyword static](keywords.md#static-variable) so:
 
 ```c_cpp
 // If you define NON TRIVIAL globals, always force initialisation of that global in the same header file to make sure it is initialised properly.
@@ -122,7 +122,7 @@ static auto& m_string = global::my_globals<>::my_string;
 ```
 
 ## [[likely]] [[unlikely]]
-If you have a condition branch (`if`, `while`, `for`) you can give the compiler a hint which branch/condition is more likely to be hit through out the runtime. This helps the compiler to optimise. This has nothing to do with branch prediction, but with optimal cache usage for the likely case. E.g. it is unlikely to hit the base case of an recursive function. Or it is unlikely to not find an element in a vector which stores elements you want to find.
+If you have a condition branch (`if`, `while`, `for`) you can give the compiler a hint which branch/condition is more likely to be hit through out the runtime. This helps the compiler to optimize. This has nothing to do with branch prediction, but with optimal cache usage for the likely case. E.g. it is unlikely to hit the base case of an recursive function. Or it is unlikely to not find an element in a vector which stores elements you want to find.
 
 - [example usage + Benchmark](https://en.cppreference.com/w/cpp/language/attributes/likely) *~ 5 min. reading time*
 * This is a c++ 20 feature. But you can write a macro for this:
@@ -147,12 +147,12 @@ class C{
 };
 ```
 ## [[nodiscard]]
-Declaring a function `[[nodiscard]]` means that you cannot use the function without using its return value. Though this is mainly to prevent and find bugs this also might help you to optimise code after you found that you used empty() instead of clear().
+Declaring a function `[[nodiscard]]` means that you cannot use the function without using its return value. Though this is mainly to prevent and find bugs this also might help you to optimize code after you found that you used empty() instead of clear().
 
 - [Start Using [[nodiscard]]!](https://www.youtube-nocookie.com/embed/nhsahjY5jdE?rel=0) *~6 min.*
 
 ## noexept
-Flagging a function/method with the `noexept` keyword tells the compiler that no exceptions will happen when this function/method is called. This allows the compiler to optimise things.
+Flagging a function/method with the `noexept` keyword tells the compiler that no exceptions will happen when this function/method is called. This allows the compiler to optimize things.
 **Do mark functions and methods `noexept` if you know that they cannot throw an exception.**
 
 - [When noexcept Really Matters](https://www.youtube-nocookie.com/embed/AG_63_edgUg?rel=0) *~5 min.*
@@ -160,12 +160,17 @@ Flagging a function/method with the `noexept` keyword tells the compiler that no
 ## pure function
 A `pure` function does not use any global state.
 **Mark all functions pure which do not use global values.**
-This helps the compiler to optimise your code and can be combined with `const`. A `pure` function also easier to parallelize.
+This helps the compiler to optimize your code and can be combined with `const`. A `pure` function also easier to parallelize.
 
 - [video tutorial](https://www.youtube-nocookie.com/embed/8ZxGABHcu40?rel=0) *~5 min.*
 
+## restrict
+`restrict` is only defined in the [standard, page 123](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf) of **C**, not in the [standard](https://isocpp.org/std/the-standard) of **C++**. Nonetheless some compiler support the keyword. If you use it in a c++ project, you have to stick to the same compiler! The keyword tells the compiler that the value of a `restricted` pointer wont change. This allows for less operations and thus smaller program size and faster execution. If you break the promise to not change the value of the pointer, the behavior will be undefined! Only use if really necessary --> Write tests and examine the assembly produced!
+
+- [video tutorial](https://www.youtube-nocookie.com/embed/TBGu3NNpF1Q?rel=0) *~13 min.*
+
 ## static variable
-`Static` variables are essential global variables which get initialised once, exist only once and have a lifetime from their first call until the program is terminated. This has its benefits but `static` variables are guaranteed to be initialised in a thread save fashion meaning there are "hidden" locks. Also on every access there is always a check if the variable is already initialised.
+`Static` variables are essential global variables which get initialized once, exist only once and have a lifetime from their first call until the program is terminated. This has its benefits but `static` variables are guaranteed to be initialized in a thread save fashion meaning there are "hidden" locks. Also on every access there is always a check if the variable is already initialized.
 **If a `static variable` is accessed a s&ast;&ast;&ast;t-ton of times it might me a good idea to instead have a local `reference` (local cash) to the `static variable` instead.**
 
 - [example of cashing and analysis against direct access](https://www.youtube-nocookie.com/embed/B3WWsKFePiM?rel=0) *~20 min.*
