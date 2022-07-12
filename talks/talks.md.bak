@@ -1,6 +1,6 @@
 [root](../README.md) / talks.md
 # Talks
-A list of long talks which fit multiple criteria. I summarised each talk so you can see, if you are interested in listening to the full version. In general every talk in this list is not a waste of time to listen to multiple times.
+A list of long talks which fit multiple criteria. I summarized each talk so you can see, if you are interested in listening to the full version. In general every talk in this list is not a waste of time to listen to multiple times.
 
 ## CppCon 2014: Chandler Carruth "Efficiency with Algorithms, Performance with Data Structures"
 
@@ -41,3 +41,23 @@ A list of long talks which fit multiple criteria. I summarised each talk so you 
 	* honestly that part was to high for my brain
 		* use pointers as Identity?
 * use bit-fields
+
+## CppCon 2016: Jason Turner “Practical Performance Practices"
+* [link](https://www.youtube-nocookie.com/embed/uzF4u9KgUWI?rel=0)  *~1h* 
+* always prefer std::array, than std::vector, than any other container which fits your needs
+* always *const* if possible
+* always initialize variables at construction
+* don*t recalculate/reevaluate immutable values
+* The simpler solution is almost always the best solution
+* Use rule of 5 or better rule of 0
+* Avoid named temporaries / Avoid object copying
+* Don't pass smart pointers
+* prefer std::unique_ptr over std::shared_ptr
+* Avoid automatic conversations, make converstaions *explicit*
+* Don't use std::endl unless you want to flush the console. Use "\n" instead.
+* Avoid std::function, never  use std::bind. Use Lambdas instead.
+* Avoid non-local data
+
+
+
+
