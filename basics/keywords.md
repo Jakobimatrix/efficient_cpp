@@ -1,7 +1,12 @@
 [root](../README.md) / [Basics](basics.md) / keywords.md
 # Keywords
-The following keywords should be used if possible to help the compiler to optimize the code.
+The following keywords should considered to be used to help the compiler to optimize the code.
 
+## auto
+Every compiler is capable of deducing the return type of any kind and of any type of function. **Using `auto` removes the risk of unwanted type casting **(compare [implicit type conversation within loops](basics.md#implicit-type-conversation-within-loops).) `auto` is capable of deducing const but will never result in a reference. `auto&` must be stated explicitly. `auto` will never perform a type conversation.
+
+- [Understanding `auto`](https://www.youtube-nocookie.com/embed/tn69TCMdYbQ?rel=0&start=116) *~9 min.*
+- [prefer auto](https://www.youtube-nocookie.com/embed/PJ-byW33-Hs?rel=0&start=169) *~7 min.* 
 
 ## const Function
 A `const` function does not change any global state.
