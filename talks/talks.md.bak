@@ -26,6 +26,19 @@ A list of long talks which fit multiple criteria. I summarized each talk so you 
 * Data structures and Algorithms are intertwined
 	* keep in mind that a fast algorithm using a bad data structure might be slower than a slow algorithm using a fast structure
 	* *'worse is better'*
+	
+## CppCon 2015: Chandler Carruth "Tuning C++: Benchmarks, and CPUs, and Compilers! Oh My!"
+* [link](https://www.youtube-nocookie.com/embed/nXaxk27zwlk?rel=0) *~1h 30m*
+* Performance matters because we reduce the energy needed to run the program
+* A funny story about blind optimization: *Measure first, tune what matters*
+* Micro Benchmarks / Google Benchmark
+    * pitfalls at bench marking: make sure you benchmark your function and not the set up function 
+    * perf
+        * `perf stats`
+        * `perf record -g` + `perf report -g 'graph,0.5,caller'`
+            * compiler flag -fno-omit-frame-pointer
+    * make sure your optimizer does not optimize away the code you are benchmarking. 
+    * Cache misses
 
 ## CppCon 2016: Chandler Carruth “High Performance Code 201: Hybrid Data Structures"
 * [link](https://www.youtube-nocookie.com/embed/vElZc6zSIXM?rel=0) *~38 min.*
@@ -44,18 +57,18 @@ A list of long talks which fit multiple criteria. I summarized each talk so you 
 
 ## CppCon 2016: Jason Turner “Practical Performance Practices"
 * [link](https://www.youtube-nocookie.com/embed/uzF4u9KgUWI?rel=0)  *~1h* 
-* always prefer std::array, than std::vector, than any other container which fits your needs
-* always *const* if possible
+* always prefer `std::array,` than `std::vector`, than any other container which fits your needs
+* always `const` if possible
 * always initialize variables at construction
-* don*t recalculate/reevaluate immutable values
+* don't recalculate/reevaluate immutable values
 * The simpler solution is almost always the best solution
 * Use rule of 5 or better rule of 0
 * Avoid named temporaries / Avoid object copying
 * Don't pass smart pointers
-* prefer std::unique_ptr over std::shared_ptr
-* Avoid automatic conversations, make converstaions *explicit*
-* Don't use std::endl unless you want to flush the console. Use "\n" instead.
-* Avoid std::function, never  use std::bind. Use Lambdas instead.
+* prefer `std::unique_ptr` over `std::shared_ptr`
+* Avoid automatic conversations, make conversations `explicit`
+* Don't use `std::endl` unless you want to flush the console. Use `"\n"` instead.
+* Avoid `std::function`, never  use `std::bind`. Use Lambdas instead.
 * Avoid non-local data
 
 

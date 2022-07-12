@@ -33,6 +33,7 @@ AlsoAlso: I was too lazy to add for every point at which c++ version that point 
 1. There are some things you can and should always do. These are covered in **basics**. 
 2. Don't reinvent the wheel: Use well established existing **libraries**. These are already optimized by people who know probably better.
 3. **First** write clean code<sup>[1](#footnote_clean_code)</sup> **Second** write good tests **Third** validate if optimisation is needed **Forth** profile the program, don't do blind optimisation **Fifth** optimize. **Sixth** Check if Tests still work.
+    * A funny story about [blind optimization](https://www.youtube-nocookie.com/embed/nXaxk27zwlk?rel=209&start=0&end=614) you should listen to ~7 minutes.
 
 Or to quote from [Cambridge; Faster C++](http://www-h.eng.cam.ac.uk/help/tpl/languages/C++/fasterC++.html#Basics):
 
