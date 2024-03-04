@@ -1,3 +1,4 @@
+#programming #cpp
 [root](../../README.md) / [basics](../basics.md) / memory.md
 # Memory
 To write fast executing code, you must understand how memory works.

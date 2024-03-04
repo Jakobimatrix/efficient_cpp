@@ -1,3 +1,4 @@
+#programming #cpp
 [root](../README.md) / compiler.md
 # Compiler
 To optimize your code you need to understand what the compiler does, how he does and when he does as well as when and what he can and cannot do.

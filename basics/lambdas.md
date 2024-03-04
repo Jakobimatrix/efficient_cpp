@@ -1,3 +1,4 @@
+#programming #cpp
 [root](../../README.md) / [basics](../basics.md) / lambdas.md
 # Lambdas
 Lambdas are awesome.

@@ -1,3 +1,4 @@
+#programming #cpp
 # efficient_cpp
 
 ## Description
@@ -55,7 +56,6 @@ Or to quote from [Cambridge; Faster C++](http://www-h.eng.cam.ac.uk/help/tpl/lan
 - [constexpr; functions@compiletime](constexpr/constexpr.md)
 - [Intrinsic Functions](intrinsicFunctions/intrinsicFunctions.md)
 - [Libraries](libraries/libraries.md)
-- [Multithreading](multithreading/multithreading.md)
 - [Microcontroller](microcontroller/microcontroller.md)
 - [Tools](/tools/tools.md)
 - [Talks](talks/talks.md)

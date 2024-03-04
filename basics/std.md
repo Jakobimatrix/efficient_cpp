@@ -1,3 +1,4 @@
+#programming #cpp
 [root](../README.md) / [Basics](basics.md) / std.md
 # std
 ## #include &lt;algorithm&gt; #include &lt;cmath&gt; #include &lt;numeric&gt;

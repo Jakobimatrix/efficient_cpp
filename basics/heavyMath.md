@@ -1,3 +1,4 @@
+#programming #cpp
 [root](../README.md) / [Basics](basics.md) / heavyMath.md
 # Heavy Maths Operations
 Some operations need a great amount of clock cycles. Used in loops these can be the reason for a bottle neck. There are ways to trait precision for faster calculation. See:

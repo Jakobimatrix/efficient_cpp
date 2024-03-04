@@ -1,3 +1,4 @@
+#programming #cpp
 [root](../README.md) / basics.md
 # Basics
 These are small  optimizations which are very easy to do with no or very little drawbacks and thus should be done automatically.
