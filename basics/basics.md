@@ -25,7 +25,7 @@ Inside a loop:
 
 ### implicit type conversation within loops
 If you use an index to access data inside a container, use `size_t` (64 bit unsigned) as the index type not `int` (32 bit signed). Otherwise you force for every element access an implicit conversation.
-```c_cpp
+```cpp
 for(int i = start; i < end; ++i) {
   data[i].do(); // implicit conversation
 }
@@ -38,7 +38,7 @@ for(size_t i = start; i < end; ++i) {
 
 ### Iterator based loops
 You should always prefer the range based for loop which is the fastest implementation of a for loop over all elements. If you iterate manually make sure to do the right comparison to check for the end of the container.
-```c_cpp
+```cpp
 // bad since the comparison < is slower than !=
 for(auto it = container.start(); it < container.end(); it++) {...}
 
@@ -49,3 +49,25 @@ for(auto it = container.start(); it != container.end(); it++) {...}
 for(const auto &data : container) {...}
 ```
 - [C++ Weekly - Ep 279 - Quick Perf Tip: Use The Right Iterator Comparison](https://www.youtube-nocookie.com/embed/oelQ4uAw2WQ?rel=0) *~8 min.*
+
+### rvalue reference
+- optimize only for l values
+- Do this, if your function manipulates the object. If its a temporary object (r value) than don't copy, but if its a l value (existing variable in memory) copy it.
+```cpp
+double value = 42.0;
+// "double value" is l (left) value. l values exist in memory
+// "42.0" is r (right) value. r values might not exist in memory.
+
+void func1(Object &&); // r value reference
+void func2(Object &); // value reference
+
+func1(createObject()); // no copy r value
+func2(createObject()); // no copy normal reference
+
+Object x;
+func1(x); // copy because its an l value
+func1(std::move(x)); // no copy, x is now r value
+// std::move DOES NOT move anything. It is just an l to r value cast.
+func1(static_cast<Object&&>(x)); // no copy, x is now r value
+func2(x); // no copy, normal reference
+```

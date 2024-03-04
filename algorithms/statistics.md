@@ -12,7 +12,7 @@ typename ExecPolicy = std::decay_t<decltype(std::execution::seq)>,
 typename InputType = std::ranges::range_value_t<Range>>
 requires std::sortable<std::ranges::iterator_t<Range>, Comp> && std::is_arithmetic_v<InputType>
 auto median(Range&& nonEmptyNumConstRange, Comp comp = {}, ExecPolicy execPolicy = std::execution::seq)
-  {
+{
   using ReturnType = typename std::conditional<(std::is_integral_v<InputType>), double, InputType>::type;
   assert(!std::empty(nonEmptyNumConstRange));
   if (std::empty(nonEmptyNumConstRange))
