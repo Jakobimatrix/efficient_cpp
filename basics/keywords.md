@@ -175,7 +175,7 @@ This helps the compiler to optimize your code and can be combined with `const`. 
 
 - [video tutorial](https://www.youtube-nocookie.com/embed/TBGu3NNpF1Q?rel=0) *~13 min.*
 
-## static variable
+## static variable (within a function/method)
 `Static` variables are essential global variables which get initialized once, exist only once and have a lifetime from their first call until the program is terminated. This has its benefits but `static` variables are guaranteed to be initialized in a thread save fashion meaning there are "hidden" locks. Also on every access there is always a check if the variable is already initialized.
 **If a `static variable` is accessed a s&ast;&ast;&ast;t-ton of times it might me a good idea to instead have a local `reference` (local cash) to the `static variable` instead.**
 
